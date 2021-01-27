@@ -1,0 +1,2 @@
+api_infographic
+https://www.smartfile.com/blog/the-api-infographic/
