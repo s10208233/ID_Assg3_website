@@ -1,0 +1,56 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0px;
+}
+nav{
+    min-height: 100px;
+}
+nav .container-fluid{
+    margin: 0px 50px;
+}
+#current-page{
+    color: rgb(255, 255, 255);
+}
+
+.main-content{
+
+}
+.main-content #intro{
+    background-color: #001835;
+    color: white;
+    padding-bottom: 150px;
+    text-align: center;
+
+}
+#intro lottie-player{
+    padding-bottom: 150px;
+}
+
+.main-content #what-is-api{
+    height: 600px;
+    background-color: #acacac;
+}
+
+.main-content #how-api-work{
+    height: 900px;
+    background-color: #808080;
+}
+
+.main-content #test{
+    height: 600px;
+    background-color: #acacac;
+}
+
+
+footer{
+    background-color: #212529;
+}
+.footer-links{
+    margin: 0px;
+}
+.footer-links li{
+    display: inline-block;
+    list-style: none;
+}

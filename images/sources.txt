@@ -1,2 +1,5 @@
 api_infographic
 https://www.smartfile.com/blog/the-api-infographic/
+
+All-About-APIs-Infographic
+https://www.safe.com/blog/2016/04/all-about-apis/
