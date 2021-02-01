@@ -3,3 +3,6 @@ https://www.smartfile.com/blog/the-api-infographic/
 
 All-About-APIs-Infographic
 https://www.safe.com/blog/2016/04/all-about-apis/
+
+thonk.svg
+https://www.reddit.com/r/Thinking/comments/8eg2u4/vectorized_thonk/

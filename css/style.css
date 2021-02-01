@@ -14,36 +14,6 @@ nav .container-fluid{
     color: rgb(255, 255, 255);
 }
 
-.main-content{
-
-}
-.main-content #intro{
-    background-color: #001835;
-    color: white;
-    padding-bottom: 300px;
-    text-align: center;
-
-}
-#intro lottie-player{
-    padding-bottom: 150px;
-}
-
-.main-content #what-is-api{
-    height: 600px;
-    background-color: #acacac;
-}
-
-.main-content #how-api-work{
-    height: 900px;
-    background-color: #808080;
-}
-
-.main-content #test{
-    height: 600px;
-    background-color: #acacac;
-}
-
-
 footer{
     background-color: #212529;
 }

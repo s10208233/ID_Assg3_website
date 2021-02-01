@@ -1,0 +1,44 @@
+.main-content{
+    color: white;
+    background-color: #001835;
+}
+#intro{
+    background-color: #001835;
+    color: white;
+    padding-bottom: 300px;
+    text-align: center;
+
+}
+#intro lottie-player{
+    padding-bottom: 150px;
+}
+
+#what-is-api{
+    margin: 0px 25%;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+}
+#what-is-api div{
+    width: 50%;
+    height: 50%;
+}
+
+#what-is-api lottie-player{
+    margin-top: -50px;
+    flex-basis: 50%;
+}
+.animation{
+    height: inherit;
+}
+
+#how-api-work{
+    height: 900px;
+    background-color: #808080;
+}
+
+#test{
+    height: 600px;
+    background-color: #acacac;
+}
