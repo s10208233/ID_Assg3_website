@@ -1,16 +1,22 @@
+## Deck of cards
 https://deckofcardsapi.com/
 
 
+## Trivia
 http://jservice.io/
 
 
+## Cat facts
 https://alexwohlbruck.github.io/cat-facts/docs/
 
 
+## Advice
 https://api.adviceslip.com/
 
 
+## affirmations
 https://www.affirmations.dev/
 
 
+## Dog 
 https://dog.ceo/dog-api/
