@@ -2,19 +2,22 @@
     color: white;
     background-color: #001835;
 }
+.main-content p{
+    color: rgba(255, 255, 255, 0.40);
+    line-height: 1.5;
+}
 #intro{
     background-color: #001835;
     color: white;
     padding-bottom: 300px;
     text-align: center;
-
 }
 #intro lottie-player{
     padding-bottom: 150px;
 }
 
 #what-is-api{
-    margin: 0px 25%;
+    margin: auto 20%;
     height: 600px;
     display: flex;
     flex-direction: row;
@@ -29,13 +32,35 @@
     margin-top: -60px;
     flex-basis: 50%;
 }
-.animation{
-    height: inherit;
-}
 
 #how-api-work{
-    height: 900px;
-    background-color: #808080;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.haw-icons-container{
+    display:flex;
+    flex-direction: column;
+    margin-right: 50px;
+}
+
+.haw-desc-container{
+    width: 300px;
+}
+
+.haw-desc-blocks{
+    height: 150px;
+}
+
+.haw-desc-blocks h3{
+    padding-top: 50px;
+}
+
+#how-api-work lottie-player{
+    width: 150px;
+    height: 150px;
 }
 
 #test{
