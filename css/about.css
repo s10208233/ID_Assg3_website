@@ -1,0 +1,25 @@
+.banner{
+    background-color: #001835;
+    min-height:900px;
+    color: white;
+}
+
+#about-us{
+    padding: 25px;
+    background-color:#00aeff36;
+    margin: auto;
+    height:600px;
+    width:600px;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top:200px;
+    left:0px;
+    right:0px;
+}
+
+#about-us lottie-player{
+    margin:auto;
+    width: 68px;
+    height: 68px;
+}
