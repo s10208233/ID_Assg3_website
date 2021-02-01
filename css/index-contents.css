@@ -34,10 +34,12 @@
 }
 
 #how-api-work{
+    margin-top: 150px;
     height: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-bottom: 150px;
 }
 
 .haw-icons-container{
@@ -47,20 +49,21 @@
 }
 
 .haw-desc-container{
-    width: 300px;
+    width: 400px;
 }
 
 .haw-desc-blocks{
-    height: 150px;
+    min-height: 250px;
+    max-height: 250px;
 }
 
 .haw-desc-blocks h3{
-    padding-top: 50px;
+    padding-top: 75px;
 }
 
 #how-api-work lottie-player{
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
 }
 
 #test{
