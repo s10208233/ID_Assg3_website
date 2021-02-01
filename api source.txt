@@ -1,0 +1,16 @@
+https://deckofcardsapi.com/
+
+
+http://jservice.io/
+
+
+https://alexwohlbruck.github.io/cat-facts/docs/
+
+
+https://api.adviceslip.com/
+
+
+https://www.affirmations.dev/
+
+
+https://dog.ceo/dog-api/
