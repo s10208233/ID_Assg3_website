@@ -1,0 +1,32 @@
+.main-content{
+    display: flex;
+    flex-direction: column;
+    background-color: #001835;
+    min-height:900px;
+    color: white;
+   
+}
+
+#contact{
+    display: flex;
+    flex-direction: row;
+    margin:auto;
+
+}
+
+#form{
+    position: absolute;
+    top:250px;
+    left:150px;
+    right:150px;   
+    background-color: #212529;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.input-group.mb-3{
+    height: 90px;
+}
+#floatingInputGrid{
+    height: 250px;
+}
