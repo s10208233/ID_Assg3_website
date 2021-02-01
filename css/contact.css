@@ -1,31 +1,40 @@
-.main-content{
-    display: flex;
-    flex-direction: column;
+.banner{
     background-color: #001835;
     min-height:900px;
     color: white;
-   
 }
 
 #contact{
     display: flex;
     flex-direction: row;
     margin:auto;
+}
 
+#form lottie-player{
+    margin: auto;
+    width: 75px;
+    top: 0px;
+}
+
+#form h1{
+    color: white;
+    text-align: center;
+    padding: 0px 0px 30px;
 }
 
 #form{
     position: absolute;
-    top:250px;
-    left:150px;
-    right:150px;   
-    background-color: #212529;
-    padding: 20px;
-    border-radius: 15px;
+    top:200px;
+    left:0px;
+    right:0px; 
+    margin: auto;  
+    background-color: #00aeff36;
+    padding: 25px;
+    width: 600px;
 }
 
 .input-group.mb-3{
-    height: 90px;
+    height: 60px;
 }
 #floatingInputGrid{
     height: 250px;
