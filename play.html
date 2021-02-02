@@ -7,7 +7,8 @@
 <link rel="stylesheet" href="normalize.css">
 <link rel="icon" href="images/favicon.png" sizes="15x15">
 <link rel="stylesheet" href="css/style.css">
-<script src="jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="css/play.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
@@ -17,6 +18,9 @@
 <style>
     body{
         font-family: 'Jura', sans-serif;
+    }
+    button{
+        outline: none;
     }
 </style>
 </head>
@@ -43,11 +47,80 @@
         </nav>
 
     <div class="main-content">
-
-        <div id="what-is-api" class="what-is-api">
-
+        <div class="api-menu">
+            <!-- WORK API CARDS -->
+            <div class="api-card">
+                <img src="images/aita-logo.png">
+                <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" id="api-cards" onclick="test(this.id)">
+                    Test & Play
+                </button>
+            </div>
+            <div class="api-card">
+                <img src="images/aita-logo.png">
+                <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" id="api-2" onclick="test(this.id)">
+                    Test & Play
+                </button>
+            </div>
+            <div class="api-card">
+                <img src="images/aita-logo.png">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="api-3" onclick="test(this.id)">
+                    Test & Play
+                </button>
+            </div>
+            <div class="api-card">
+                <img src="images/aita-logo.png">
+                <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" id="api-4" onclick="test(this.id)">
+                    Test & Play
+                </button>
+            </div>
+            <div class="api-card">
+                <img src="images/aita-logo.png">
+                <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" id="api-5" onclick="test(this.id)">
+                    Test & Play
+                </button>
+            </div>
+            <div class="api-card">
+                <img src="images/aita-logo.png">
+                <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" id="api-6" onclick="test(this.id)">
+                    Test & Play
+                </button>
+            </div>
         </div>
     </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <!-- MODAL CONTENT -->
+            <div id="api-content">
+        
+            </div>
+            <div id="api-control-cards">
+
+                <button type="button" id="deckbtn" class="btn btn-dark" onclick="thisfunction()" >Press for card</button>
+            </div>
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <footer>
         <ul class="footer-links">
@@ -59,5 +132,7 @@
             </li>
         </ul>
     </footer>
+
+<script type="text/javascript" src="js/deckOfCards.js"></script>
 </body>
 </html>
