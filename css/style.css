@@ -3,6 +3,7 @@ html{
 }
 body{
     margin: 0px;
+    color: white;
 }
 nav{
     min-height: 100px;
@@ -23,4 +24,8 @@ footer{
 .footer-links li{
     display: inline-block;
     list-style: none;
+}
+.btn.btn-secondary.dropdown-toggle{
+    background-color: transparent;
+    border-color: transparent;
 }
