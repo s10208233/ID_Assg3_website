@@ -117,7 +117,7 @@ $("#draw").click(function draw(){
         }
         console.log("final: " + value)
         $("#playerHand").append("<img src='"+(data.cards[0].image+"'>"))
-        botDraw = data.cards[1].image
+        // botDraw = data.cards[1].image
     })
 })
 
