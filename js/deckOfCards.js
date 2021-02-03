@@ -117,13 +117,7 @@ $("#draw").click(function draw(){
         }
         console.log("final: " + value)
         $("#playerHand").append("<img src='"+(data.cards[0].image+"'>"))
-        botDraw = data.cards[1].image
     })
-})
-
-
-$("#skip").click(function skip(){
-
     // function getRandomInt(min, max) {
     //     min = Math.ceil(min);
     //     max = Math.floor(max);
@@ -142,9 +136,16 @@ $("#skip").click(function skip(){
     //     .then(data=>{
     //     botValue = botValue + parseInt(data.cards[0].value)
     //     console.log(data.cards[0].value)
+    //     botDraw = data.cards[0].image
     //     console.log("final bot: "+botValue)
     //     })
     // }
+
+})
+
+
+$("#skip").click(function skip(){
+
 
     $("#botHand").append("<img src='"+imgSrc3+"'>");
     $("#botHand").append("<img src='"+imgSrc4+"'>");
