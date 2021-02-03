@@ -16,24 +16,31 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+    /* THIS CSS WILL OVERRIDE BOOTSRAP's STYLING */
     body{
         font-family: 'Jura', sans-serif;
     }
     button{
         outline: none;
     }
+    .modal-header{
+    }
+    .modal-content {
+        color:white;
+        background-color: #001835ec;
+    }
 </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar navbar-dark bg-dark" aria-label="Second navbar example">
+    <nav class="navbar navbar-expand-sm navbar navbar-dark bg-dark" aria-label="Second navbar ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">AITA</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbars02" aria-controls="navbars02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarsExample02">
+            <div class="collapse navbar-collapse" id="navbars02">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item active">
                 <a class="nav-link" id="current-page" href="index.html#">Home</a>
@@ -51,37 +58,37 @@
             <!-- WORK API CARDS -->
             <div class="api-card">
                 <img src="images/aita-logo.png">
-                <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" id="api-cards" onclick="test(this.id)">
+                <button type="button"  data-bs-toggle="modal" data-bs-target="#Modal" id="api-cards" onclick="test(this.id)">
                     Test & Play
                 </button>
             </div>
             <div class="api-card">
                 <img src="images/aita-logo.png">
-                <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" id="api-2" onclick="test(this.id)">
+                <button type="button"  data-bs-toggle="modal" data-bs-target="#Modal" id="api-nasa" onclick="test(this.id)">
                     Test & Play
                 </button>
             </div>
             <div class="api-card">
                 <img src="images/aita-logo.png">
-                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="api-3" onclick="test(this.id)">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#Modal" id="api-3" onclick="test(this.id)">
                     Test & Play
                 </button>
             </div>
             <div class="api-card">
                 <img src="images/aita-logo.png">
-                <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" id="api-4" onclick="test(this.id)">
+                <button type="button"  data-bs-toggle="modal" data-bs-target="#Modal" id="api-4" onclick="test(this.id)">
                     Test & Play
                 </button>
             </div>
             <div class="api-card">
                 <img src="images/aita-logo.png">
-                <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" id="api-5" onclick="test(this.id)">
+                <button type="button"  data-bs-toggle="modal" data-bs-target="#Modal" id="api-5" onclick="test(this.id)">
                     Test & Play
                 </button>
             </div>
             <div class="api-card">
                 <img src="images/aita-logo.png">
-                <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" id="api-6" onclick="test(this.id)">
+                <button type="button"  data-bs-toggle="modal" data-bs-target="#Modal" id="api-6" onclick="test(this.id)">
                     Test & Play
                 </button>
             </div>
@@ -89,23 +96,30 @@
     </div>
   
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+  <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="ModalLabel">Modal title</h5>
+            <a href="" data-bs-dismiss="modal" aria-label="Close" onclick="clearModal()">
+                    <lottie-player src="https://assets3.lottiefiles.com/private_files/lf30_ox0nrliv.json"  background="transparent"  speed="0.5"  style="width: 25px; height: 25px;"  loop autoplay></lottie-player>
+            </a>
         </div>
         <div class="modal-body">
             <!-- MODAL CONTENT -->
             <div id="api-content">
-        
+                <p style="text-align: center;">Press a button below to make your first request!</p>
             </div>
             <!-- DeckOfCards -->
-            <div id="api-control-cards">
+            <div class="api-control" id="api-control-cards">
                 <button type="button" id="deckbtn" class="btn btn-dark" onclick="" >Play Blackjack</button>
                 <button type="button" id="draw" class="btn btn-dark" onclick="" >Draw</button>
                 <button type="button" id="skip" class="btn btn-dark" onclick="" >Skip</button>
+            <!-- MODAL CONTROLS -->
+            <div class="api-control" id="api-control-nasa">
+                <button type="button" id="deckbtn" class="btn btn-primary" onclick="APOC()" >Astronomy Picture of the Day</button>
+                <button type="button" id="deckbtn" class="btn btn-primary" onclick="" >Earth Polychromatic Imaging Camera</button>
+                <button type="button" id="deckbtn" class="btn btn-primary" onclick="" >Earth Polychromatic Imaging Camera</button>
             </div>
 
 
@@ -118,7 +132,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="clearModal()">Close</button>
         </div>
       </div>
     </div>
@@ -136,5 +150,6 @@
     </footer>
 
 <script type="text/javascript" src="js/deckOfCards.js"></script>
+<script type="text/javascript" src="js/nasa.js"></script>
 </body>
 </html>
