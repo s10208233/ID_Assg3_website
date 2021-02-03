@@ -24,10 +24,14 @@
         outline: none;
     }
     .modal-header{
+        border-color: rgba(255, 255, 255, 0.1)
     }
     .modal-content {
         color:white;
         background-color: #001835ec;
+    }
+    .modal-footer{
+        border-color: rgba(255, 255, 255, 0.1)
     }
 </style>
 </head>
@@ -95,7 +99,7 @@
         </div>
     </div>
   
-  <!-- Modal -->
+  <!-- MODAL -->
   <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
@@ -116,9 +120,9 @@
                 <button type="button" id="deckbtn" class="btn btn-primary" onclick="thisfunction()" >Press for card</button>
             </div>
             <div class="api-control" id="api-control-nasa">
-                <button type="button" id="deckbtn" class="btn btn-primary" onclick="APOC()" >Astronomy Picture of the Day</button>
-                <button type="button" id="deckbtn" class="btn btn-primary" onclick="" >Earth Polychromatic Imaging Camera</button>
-                <button type="button" id="deckbtn" class="btn btn-primary" onclick="" >Earth Polychromatic Imaging Camera</button>
+                <button type="button" class="btn btn-primary" onclick="APOC()" >Astronomy Picture of the Day</button>
+                <button type="button" id="MRPstart" class="btn btn-primary" onclick="MRP(this.id)" >Mars Rover Photos</button>
+                <button type="button" class="btn btn-primary" onclick="" >Earth Polychromatic Imaging Camera</button>
             </div>
 
 
@@ -131,7 +135,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="clearModal()">Close</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
