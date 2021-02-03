@@ -16,11 +16,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+    /* THIS CSS WILL OVERRIDE BOOTSRAP's STYLING */
     body{
         font-family: 'Jura', sans-serif;
     }
     button{
         outline: none;
+    }
+    .modal-header{
+    }
+    .modal-content {
+        color:white;
+        background-color: #001835ec;
     }
 </style>
 </head>
@@ -93,8 +100,10 @@
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="ModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="ModalLabel">Modal title</h5>
+            <a href="" data-bs-dismiss="modal" aria-label="Close" onclick="clearModal()">
+                    <lottie-player src="https://assets3.lottiefiles.com/private_files/lf30_ox0nrliv.json"  background="transparent"  speed="0.5"  style="width: 25px; height: 25px;"  loop autoplay></lottie-player>
+            </a>
         </div>
         <div class="modal-body">
             <!-- MODAL CONTENT -->
@@ -104,12 +113,12 @@
             <!-- MODAL CONTROLS -->
             <div class="api-control" id="api-control-cards">
 
-                <button type="button" id="deckbtn" class="btn btn-dark" onclick="thisfunction()" >Press for card</button>
+                <button type="button" id="deckbtn" class="btn btn-primary" onclick="thisfunction()" >Press for card</button>
             </div>
             <div class="api-control" id="api-control-nasa">
-                <button type="button" id="deckbtn" class="btn btn-dark" onclick="APOC()" >Astronomy Picture of the Day</button>
-                <button type="button" id="deckbtn" class="btn btn-dark" onclick="" >Earth Polychromatic Imaging Camera</button>
-                <button type="button" id="deckbtn" class="btn btn-dark" onclick="" >Earth Polychromatic Imaging Camera</button>
+                <button type="button" id="deckbtn" class="btn btn-primary" onclick="APOC()" >Astronomy Picture of the Day</button>
+                <button type="button" id="deckbtn" class="btn btn-primary" onclick="" >Earth Polychromatic Imaging Camera</button>
+                <button type="button" id="deckbtn" class="btn btn-primary" onclick="" >Earth Polychromatic Imaging Camera</button>
             </div>
 
 
@@ -122,7 +131,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="clearModal()">Close</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="clearModal()">Close</button>
         </div>
       </div>
     </div>

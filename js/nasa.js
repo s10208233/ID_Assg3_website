@@ -3,7 +3,12 @@ function APOC(){
     fetch("https://api.nasa.gov/planetary/apod?api_key=Ej1PTXMfCnc8NPfky2OYSqjzkwnZNDdJRjeAOtQ0")
     .then(res=>res.json())
     .then(data=>{
-        $("#api-content").append("<img style='width:100%;' src='"+ data["url"] +"'>")
+        if (data['media_type'] == 'video'){
+            $("#api-content").append('<iframe width="100%" height="500px"src="'+data["url"]+'"></iframe>')
+        }
+        else{
+            $("#api-content").append("<img style='width:100%;' src='"+ data["url"] +"'>")
+        }
         $("#api-content").append("\
         <div class='api-content-message'>\
         <h2 style='font-weight:bold;'>"+data['title']+"</h2>\
