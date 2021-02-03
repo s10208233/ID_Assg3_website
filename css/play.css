@@ -54,9 +54,19 @@
 }
 
 #api-content{
-    height: 475px;
+    margin: 100px;
+    min-height: fit-content;
 }
 
+.api-content-message{
+    margin: 50px auto;
+}
+
+.api-control{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
 
 #api-control-nasa button{
     margin: 5px;

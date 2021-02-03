@@ -99,14 +99,15 @@
         <div class="modal-body">
             <!-- MODAL CONTENT -->
             <div id="api-content">
-        
+                <p style="text-align: center;">Press a button below to make your first request!</p>
             </div>
-            <div id="api-control-cards">
+            <!-- MODAL CONTROLS -->
+            <div class="api-control" id="api-control-cards">
 
                 <button type="button" id="deckbtn" class="btn btn-dark" onclick="thisfunction()" >Press for card</button>
             </div>
-            <div id="api-control-nasa">
-                <button type="button" id="deckbtn" class="btn btn-dark" onclick="" >Astronomy Picture of the Day</button>
+            <div class="api-control" id="api-control-nasa">
+                <button type="button" id="deckbtn" class="btn btn-dark" onclick="APOC()" >Astronomy Picture of the Day</button>
                 <button type="button" id="deckbtn" class="btn btn-dark" onclick="" >Earth Polychromatic Imaging Camera</button>
                 <button type="button" id="deckbtn" class="btn btn-dark" onclick="" >Earth Polychromatic Imaging Camera</button>
             </div>
@@ -121,7 +122,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="clearModal()">Close</button>
         </div>
       </div>
     </div>
