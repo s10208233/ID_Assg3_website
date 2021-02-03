@@ -3,6 +3,7 @@
 // };
 
 function test(buttonId){
+    $("#api-content").empty();
     $("#api-control-cards").hide();
     $("#api-control-nasa").hide();
     console.log(buttonId)
