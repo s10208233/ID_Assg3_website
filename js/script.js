@@ -1,19 +1,17 @@
 // window.onload = function(){
 //     $("#api-control-cards").hide();
 // };
-function clearModal(){
-    $('#api-content').empty();
-    $('#api-content').append('<p style="text-align: center;">Press a button below to make your first request!</p>');
-}
 
-function test(buttonId){
+function openAPI(buttonId){
     $("#api-control-cards").hide();
     $("#api-control-nasa").hide();
     console.log(buttonId)
     if (buttonId == "api-cards"){
+        $('#api-content').empty();
         $("#api-control-cards").show();
     }
-    if (buttonId == "api-nasa"){
+    else if (buttonId == "api-nasa"){
+        $('#api-content').empty();
         $("#api-control-nasa").show();
     }
     
