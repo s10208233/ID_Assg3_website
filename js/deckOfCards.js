@@ -1,20 +1,8 @@
-const url = "https://deckofcardsapi.com/api/deck/p5q1v30wa33c/draw/?count=4"
-
-$("#draw").hide();
-$("#skip").hide();
-$("#api-content").append('<lottie-player src="https://assets4.lottiefiles.com/packages/lf20_9ngjlC.json" id="winner" background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>');
-$("#winner").hide();
-$("#api-content").append('<lottie-player src="https://assets6.lottiefiles.com/packages/lf20_YVvJHa.json" id="loser" background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>');
-$("#loser").hide();
 
 
-var playerDiv = document.createElement("DIV");
-playerDiv.id = "playerHand";
-var botDiv = document.createElement("DIV");
-botDiv.id = "botHand";
-$("#api-content").append(playerDiv);
-$("#api-content").append(botDiv);
-console.log();
+
+
+
 var value = 0;
 var botValue = 0;
 
@@ -24,27 +12,36 @@ let imgSrc3 = "";
 let imgSrc4 = "";
 var botDraw = "";
 let outcome ="";
+let playerBool = "false";
+let botBool = "false";
 
-
-
+//starting the blackjack game
 $("#deckbtn").click(async function main(){
     $("#winner").hide();
+    $("#tie").hide();
+    $("#error").hide();
     $("#loser").hide();
     $("#deckbtn").hide();
     $("#skip").show();
     $("#draw").show();
-    await fetch(url)
+    $("#botHand").hide();
+
+    await fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/draw/?count=4")
     .then(response=>{
         if (response.ok) {
         return response.json();
     }
     else {
+        $("#error").show();
+        $("#skip").hide();
+        $("#draw").hide();
+        $("#deckbtn").show();
         //error catching    
     }
     })
     .then(data=>{
         console.log(data)
-        if (data.success == false){
+        if (data.success == "false"){
             alert("The deck ran out of cards please draw again!")   
             fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/shuffle/")
         }
@@ -52,7 +49,34 @@ $("#deckbtn").click(async function main(){
         imgSrc2 = data.cards[1].image;
         imgSrc3 = data.cards[2].image;
         imgSrc4 = data.cards[3].image;
-        if (Number.isInteger(parseInt(data.cards[0].value)) == false && Number.isInteger(parseInt(data.cards[1].value)) == true ){
+        //the api sometimes returns strings hence it needs to be converted into int
+        //conversion for player
+       
+        if ((data.cards[0].value == "ACE") && (Number.isInteger(parseInt(data.cards[1].value)) == false )){
+            value = 21;
+            playerBool = "true";
+        }
+        else if ((data.cards[1].value == "ACE") && (Number.isInteger(parseInt(data.cards[0].value)) == false )){
+            value = 21;
+            playerBool = "true";
+        }
+        else if ((data.cards[0].value == "ACE") && (parseInt(data.cards[1].value) == 10 )){
+            value = 21;
+            playerBool = "true";
+        }
+        else if ((data.cards[1].value == "ACE") && (parseInt(data.cards[0].value) == 10 )){
+            value = 21;
+            playerBool = "true";
+        }
+        else if ((data.cards[1].value == "ACE") && (Number.isInteger(parseInt(data.cards[0].value)) == true )){
+            value = 11 + parseInt(data.cards[0].value);
+            playerBool = "true";
+        }
+        else if ((data.cards[0].value == "ACE") && (Number.isInteger(parseInt(data.cards[1].value)) == true )){
+            value = 11 + parseInt(data.cards[1].value);
+            playerBool = "true";
+        }
+        else if (Number.isInteger(parseInt(data.cards[0].value)) == false && Number.isInteger(parseInt(data.cards[1].value)) == true ){
             value = 10 + parseInt(data.cards[1].value);
             console.log('1')
         }
@@ -68,8 +92,33 @@ $("#deckbtn").click(async function main(){
             value = parseInt(data.cards[0].value) + parseInt(data.cards[1].value)
             console.log('4')
         }
-
-        if (Number.isInteger(parseInt(data.cards[2].value)) == false && Number.isInteger(parseInt(data.cards[3].value)) == true ){
+        
+        //conversion for bot
+        if ((data.cards[2].value == "ACE") && (Number.isInteger(parseInt(data.cards[3].value)) == false )){
+            botValue = 21;
+            botBool = "true";
+        }
+        else if ((data.cards[3].value == "ACE") && (Number.isInteger(parseInt(data.cards[2].value)) == false )){
+            botValue = 21;
+            botBool = "true";
+        }
+        else if ((data.cards[2].value == "ACE") && (parseInt(data.cards[3].value) == 10 )){
+            botValue = 21;
+            botBool = "true";
+        }
+        else if ((data.cards[3].value == "ACE") && (parseInt(data.cards[2].value) == 10 )){
+            botValue = 21;
+            botBool = "true";
+        }
+        else if ((data.cards[3].value == "ACE") && (Number.isInteger(parseInt(data.cards[2].value)) == true )){
+            botValue = 11 + parseInt(data.cards[2].value);
+            botBool = "true";
+        }
+        else if ((data.cards[2].value == "ACE") && (Number.isInteger(parseInt(data.cards[3].value)) == true )){
+            botValue = 11 + parseInt(data.cards[3].value);
+            botBool = "true";
+        }
+        else if (Number.isInteger(parseInt(data.cards[2].value)) == false && Number.isInteger(parseInt(data.cards[3].value)) == true ){
             botValue = 10 + parseInt(data.cards[3].value);
             console.log('1')
         }
@@ -85,8 +134,12 @@ $("#deckbtn").click(async function main(){
             botValue = parseInt(data.cards[2].value) + parseInt(data.cards[3].value)
             console.log('4')
         }
+
+        //append the images to show the player his/her card
         $("#playerHand").append("<img src='"+imgSrc1+"'>");
         $("#playerHand").append("<img src='"+imgSrc2+"'>");
+        $("#botHand").append("<img src='"+imgSrc3+"'>");
+        $("#botHand").append("<img src='"+imgSrc4+"'>");
         console.log("player: "+value)
         console.log("bot: "+botValue)
     })
@@ -95,10 +148,9 @@ $("#deckbtn").click(async function main(){
     })  
 })
 
-
-$("#draw").click(function draw(){
-
-    fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/draw/?count=1")
+//function to draw a card from the deck
+$("#draw").click(async function draw(){
+    await fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/draw/?count=1")
     .then(response=>{
         if (response.ok) {
         return response.json();
@@ -108,102 +160,229 @@ $("#draw").click(function draw(){
     }
     })
     .then(data=>{
-        
-        if (Number.isInteger(parseInt(data.cards[0].value)) == false){
-            value = value + 10;
+        if (playerBool === "false"){
+            if (data.cards[0].value == "ACE"){
+                value = value + 1;
+            }
+            else if (Number.isInteger(parseInt(data.cards[0].value)) == false){
+                value = value + 10;
+            }
+            else{
+                value = value + parseInt(data.cards[0].value)
+            }
+        }
+        else if (playerBool === "true"){
+            if (Number.isInteger(parseInt(data.cards[0].value)) == false){
+                value = value;
+                playerBool = "false";
+            }
+            else{
+                value = value + parseInt(data.cards[0].value) - 10;
+                playerBool = "false";
+            }
         }
         else{
-            value = value + parseInt(data.cards[0].value)
+            value = value + parseInt(data.cards[0].value) 
         }
+        
+        
         console.log("final: " + value)
         $("#playerHand").append("<img src='"+(data.cards[0].image+"'>"))
-        // botDraw = data.cards[1].image
+        botDrawing();
     })
 })
 
 
-$("#skip").click(function skip(){
+function botDrawing(){
+    
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
-    // function getRandomInt(min, max) {
-    //     min = Math.ceil(min);
-    //     max = Math.floor(max);
-    //     return Math.floor(Math.random() * (max - min + 1)) + min;
-    // }
-    // if (getRandomInt(0,1) == 1){
-    //     fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/draw/?count=1")
-    //     .then(response=>{
-    //         if (response.ok) {
-    //         return response.json();
-    //     }
-    //     else {
-    //         //error catching    
-    //     }
-    //     })
-    //     .then(data=>{
-    //     botValue = botValue + parseInt(data.cards[0].value)
-    //     console.log(data.cards[0].value)
-    //     console.log("final bot: "+botValue)
-    //     })
-    // }
+    if (botValue > 16 && botValue < 19){
+        if (getRandomInt(0,1) == 1){
+            fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/draw/?count=1")
+            .then(response=>{
+                if (response.ok) {
+                return response.json();
+            }
+            else {
+                //error catching    
+            }
+            })
+            .then(data=>{
 
-    $("#botHand").append("<img src='"+imgSrc3+"'>");
-    $("#botHand").append("<img src='"+imgSrc4+"'>");
-    if (botDraw != ""){
-        $("#botHand").append("<img src='"+botDraw+"'>");
+                if (botBool === "false"){
+                    if (data.cards[0].value == "ACE"){
+                        botValue = BotValue + 1;
+                    }
+                    else if (Number.isInteger(parseInt(data.cards[0].value)) == false){
+                        botValue = botValue + 10;
+                    }
+                    else{
+                        botValue = botValue + parseInt(data.cards[0].value)
+                    }
+                }
+                else if (botBool === "true"){
+                    if (Number.isInteger(parseInt(data.cards[0].value)) == false){
+                        botValue = botValue;
+                        botBool = "false";
+                    }
+                    else{
+                        botValue = botValue + parseInt(data.cards[0].value) - 10;
+                        botBool = "false";
+                    }   
+                }
+                else{
+                    botValue = botValue + parseInt(data.cards[0].value) 
+                }
+            
+            
+                $("#botHand").append("<img src='"+data.cards[0].image+"'>");
+                console.log("final bot: "+botValue)
+            })
+
+        }
     }
-    
-    
-    
-    if (value >= 16 && value <= 21 && value > botValue){
-        // console.log("skip: "+value);
-        // console.log("YOu win")
-        console.log("w/l: "+1);
-        alert("You Win this round!");
-        outcome = "win"
-        $("#deckbtn").show();
-        $("#draw").hide();
-        $("#skip").hide();
-        imgSrc3 = "";
-        imgSrc4 = "";
-        ;
-        
-    }
-    else if (value > 16 && value < 21 && value < botValue){
-        alert("You lost this round!");
-        outcome = "lost"
-        console.log("w/l: "+2);
-        $("#deckbtn").show();
-        $("#draw").hide();
-        $("#skip").hide();
-        imgSrc3 = "";
-        imgSrc4 = "";
-        
-        
-    }
-    else if(value < 16 || value > 21){
-        alert("You lost this round!");
-        outcome = "lost"
-        console.log("w/l: "+3);
-        $("#deckbtn").show();
-        $("#draw").hide();
-        $("#skip").hide();
-        imgSrc3 = "";
-        imgSrc4 = "";
-        
-        
-    }
-    $("#deckbtn").hide();
-    setTimeout(function(){
-        $('#playerHand').empty();
-        $('#botHand').empty();
-        $("#deckbtn").show();
-        if (outcome == "win"){
-            $("#winner").show();   
+    else if (botValue < 16){
+        fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/draw/?count=1")
+        .then(response=>{
+            if (response.ok) {
+            return response.json();
+        }
+        else {
+            //error catching    
+        }
+        })
+        .then(data=>{
+
+        if (botBool === "false"){
+            if (data.cards[0].value == "ACE"){
+                botValue = BotValue + 1;
+            }
+            else if (Number.isInteger(parseInt(data.cards[0].value)) == false){
+                botValue = botValue + 10;
+            }
+            else{
+                botValue = botValue + parseInt(data.cards[0].value)
+            };
+        }
+        else if (botBool === "true"){
+            if (Number.isInteger(parseInt(data.cards[0].value)) == false){
+                botValue = botValue;
+                botBool = false;
+            }
+            else{
+                botValue = botValue + parseInt(data.cards[0].value) - 10;
+                botBool = false;
+            }   
         }
         else{
-            $("#loser").show();
+            botValue = botValue + parseInt(data.cards[0].value) 
         }
-    }, 3000);
+        
+        
+            $("#botHand").append("<img src='"+data.cards[0].image+"'>");
+            console.log("final bot: "+botValue)
+        })
+        
+    }
+}
+
+
+//function to skip or pass which ends the round
+$("#skip").click(function skip(){
+    
+    botDrawing();
+    
+    
+
+    setTimeout(function(){
+        $("#botHand").show();
+ 
+        if (value >= 16 && value <= 21 && value > botValue){
+            // console.log("skip: "+value);
+            // console.log("YOu win")
+            console.log("w/l: "+1);
+            alert("You won the round!");
+            outcome = "win"
+            $("#deckbtn").show();
+            $("#draw").hide();
+            $("#skip").hide();
+            imgSrc3 = "";
+            imgSrc4 = "";
+            
+            
+        }
+        else if ((value < 16 || value > 21) && (botValue < 16 || botValue > 21)){
+            alert("Its a tie!");
+            outcome = "tie"
+            $("#draw").hide();
+            $("#skip").hide();
+            imgSrc3 = "";
+            imgSrc4 = "";
+        }
+        else if(botValue < 16 || botValue > 21){
+            alert("You won the round!");
+            outcome = "win"
+            $("#deckbtn").show();
+            $("#draw").hide();
+            $("#skip").hide();
+            imgSrc3 = "";
+            imgSrc4 = "";
+        }
+        else if (value >= 16 && value < 21 && value < botValue){
+            alert("You lost the round!");
+            outcome = "lost"
+            console.log("w/l: "+2);
+            $("#deckbtn").show();
+            $("#draw").hide();
+            $("#skip").hide();
+            imgSrc3 = "";
+            imgSrc4 = "";
+            
+            
+        }
+        else if(value === botValue){
+            alert("Its a tie!");
+            outcome = "tie"
+            $("#draw").hide();
+            $("#skip").hide();
+            imgSrc3 = "";
+            imgSrc4 = "";
+        }
+        else if(value < 16 || value > 21){
+            alert("You lost the round!");
+            outcome = "lost"
+            console.log("w/l: "+3);
+            $("#deckbtn").show();
+            $("#draw").hide();
+            $("#skip").hide();
+            imgSrc3 = "";
+            imgSrc4 = "";
+            
+            
+        }
+
+        $("#deckbtn").hide();
+        setTimeout(function(){
+            $('#playerHand').empty();
+            $('#botHand').empty();
+            $("#deckbtn").show();
+            if (outcome == "win"){
+                $("#winner").show();   
+            }
+            else if(outcome == "tie"){
+                $("#tie").show();
+            }
+            else{
+                $("#loser").show();
+            }
+        }, 3000);
+    },1000);
+    
     
     
     fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/shuffle/") 
