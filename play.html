@@ -74,7 +74,7 @@
             </div>
             <div class="api-card">
                 <img src="images/aita-logo.png">
-                <button type="button" data-bs-toggle="modal" data-bs-target="#Modal" id="api-3" onclick="openAPI(this.id)">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#Modal" id="api-trivia" onclick="openAPI(this.id)">
                     Test & Play
                 </button>
             </div>
@@ -121,12 +121,15 @@
                     <button type="button" id="skip" class="btn btn-dark">Skip</button>
                 </div>
                 <!-- Nasa Pictures -->
-                    <div class="api-control" id="api-control-nasa">
+                <div class="api-control" id="api-control-nasa">
                     <button type="button" class="btn btn-primary" onclick="APOC()" >Astronomy Picture of the Day</button>
                     <button type="button" id="MRPstart" class="btn btn-primary" onclick="MRP(this.id)" >Mars Rover Photos</button>
-                    <button type="button" class="btn btn-primary" onclick="">Earth Polychromatic Imaging Camera</button>
+                    <!-- <button type="button" class="btn btn-primary" onclick="">Earth Polychromatic Imaging Camera</button> -->
                 </div>
-
+                <!-- Trivia -->
+                <div class="api-control" id="api-control-trivia">
+                    <button type="button" class="btn btn-primary" onclick="" >Get Random Trivia</button>
+                </div>
 
 
                 <div class="modal-footer">
