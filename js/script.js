@@ -6,6 +6,7 @@ function openAPI(buttonId){
     $("#api-control-cards").hide();
     $("#api-control-nasa").hide();
     $("#api-control-trivia").hide();
+    var triviaData = null;
     console.log(buttonId)
     if (buttonId == "api-cards"){
         $("#api-content").empty();
