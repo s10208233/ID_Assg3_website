@@ -54,7 +54,7 @@
 }
 
 #api-content{
-    margin: 100px;
+    margin: 25px;
     min-height: fit-content;
     
 }
@@ -71,6 +71,39 @@
 
 #api-control-nasa button{
     margin: 5px;
+}
+
+.trivia-quiz-control{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    justify-content: center;
+}
+
+.random-trivia-input{
+    border-style: none;
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+}
+
+.random-trivia-submit{
+    color: white;
+    border-style: none;
+    background-color: rgb(0, 200, 0);
+    width: 50%;
+    padding: 20px;
+    margin: 0px;
+}
+
+.random-trivia-skip{
+    color: white;
+    border-style: none;
+    background-color: rgb(255, 166, 0);
+    width: 50%;
+    min-width: 50px;
+    padding: 20px 0px;
+    margin: 0px;
 }
 
 

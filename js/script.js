@@ -6,6 +6,8 @@ function openAPI(buttonId){
     $("#api-control-cards").hide();
     $("#api-control-nasa").hide();
     $("#api-control-dog").hide();
+    $("#api-control-trivia").hide();
+    var triviaData = null;
     console.log(buttonId)
     if (buttonId == "api-cards"){
         $("#ModalLabel").html("Deck of Cards API")
@@ -40,6 +42,13 @@ function openAPI(buttonId){
         $("#next").hide();
         $("#prev").hide();
         $("#api-control-dog").show();
+    if (buttonId == "api-nasa"){
+        $('#api-content').empty();
+        $("#api-control-nasa").show();
+    }
+    if (buttonId == "api-trivia"){
+        $("#api-content").empty();
+        $("#api-control-trivia").show();
     }
     
 
