@@ -10,13 +10,15 @@ let imgSrc1 = "";
 let imgSrc2 = "";
 let imgSrc3 = "";
 let imgSrc4 = "";
-var botDraw = "";
+
 let outcome ="";
-let playerBool = "false";
-let botBool = "false";
+var playerBool = "false";
+var botBool = "false";
 
 //starting the blackjack game
 $("#deckbtn").click(async function main(){
+    
+    
     $("#winner").hide();
     $("#tie").hide();
     $("#error").hide();
@@ -25,6 +27,8 @@ $("#deckbtn").click(async function main(){
     $("#skip").show();
     $("#draw").show();
     $("#botHand").hide();
+    $("#playerHand").append('<h1>Your hand</h1>');
+    $("#botHand").append("<h1>Opponent's hand</h1>");  
 
     await fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/draw/?count=4")
     .then(response=>{
@@ -51,7 +55,7 @@ $("#deckbtn").click(async function main(){
         imgSrc4 = data.cards[3].image;
         //the api sometimes returns strings hence it needs to be converted into int
         //conversion for player
-       
+        
         if ((data.cards[0].value == "ACE") && (Number.isInteger(parseInt(data.cards[1].value)) == false )){
             value = 21;
             playerBool = "true";
@@ -91,9 +95,10 @@ $("#deckbtn").click(async function main(){
         else{
             value = parseInt(data.cards[0].value) + parseInt(data.cards[1].value)
             console.log('4')
-        }
+        };
         
         //conversion for bot
+        
         if ((data.cards[2].value == "ACE") && (Number.isInteger(parseInt(data.cards[3].value)) == false )){
             botValue = 21;
             botBool = "true";
@@ -187,7 +192,7 @@ $("#draw").click(async function draw(){
         
         
         console.log("final: " + value)
-        $("#playerHand").append("<img src='"+(data.cards[0].image+"'>"))
+        $("#playerHand").append("<img src='"+data.cards[0].image+"'>")
         botDrawing();
     })
 })
