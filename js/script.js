@@ -29,12 +29,12 @@ function openAPI(buttonId){
         
         
     }
-    else if (buttonId == "api-nasa"){
+    if (buttonId == "api-nasa"){
         $("#ModalLabel").html("Nasa API")
         $('#api-content').empty();
         $("#api-control-nasa").show();
     }
-    else if (buttonId == "api-dog"){
+    if (buttonId == "api-dog"){
         $("#ModalLabel").html("Dog API") 
         $('#api-content').empty();
         $("#idoggo").show();
@@ -42,6 +42,7 @@ function openAPI(buttonId){
         $("#next").hide();
         $("#prev").hide();
         $("#api-control-dog").show();
+    }
     if (buttonId == "api-nasa"){
         $('#api-content').empty();
         $("#api-control-nasa").show();
