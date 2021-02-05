@@ -51,6 +51,11 @@ function openAPI(buttonId){
         $("#api-content").empty();
         $("#api-control-trivia").show();
     }
+    if (buttonId == "api-baguette"){
+        $("#api-content").empty();
+        $("#api-control-baguette").show();
+    }
+
     
 
 }
