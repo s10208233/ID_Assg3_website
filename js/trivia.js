@@ -1,5 +1,6 @@
 const questionMarkLottie = '<lottie-player src="https://assets6.lottiefiles.com/packages/lf20_tHEtXH.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;margin:auto;"  loop  autoplay></lottie-player>';
 const correctAnswerLottie = '<lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_x0qiw13f.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px; margin:auto;"  loop  autoplay></lottie-player>'
+const wrongAnswerLottie = '<lottie-player src="https://assets1.lottiefiles.com/packages/lf20_y8t1nosz.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px; margin:auto;"    autoplay></lottie-player>';
 
 var triviaData = null;
 
@@ -35,16 +36,23 @@ function submitTrivia(){
     let rawAnswer = triviaData[0]['answer'];
     let refineAnswer = '';
     for (let i = 0; i < rawAnswer.length; i++) {
-        if (rawAnswer[i] == "/"){
+        if (rawAnswer[i] == "/" || rawAnswer[i] == '"'){
             continue;
         }
         if (rawAnswer[i] == "<"){
-            // CONTINUE HERE
+            if (rawAnswer[i+3] == ">"){
+                i+2;
+                continue;
+            }
+            if (rawAnswer[i+2] == ">"){
+                i+2;
+                continue;
+            }
         }
         refineAnswer += rawAnswer[i];
-        console.log(refineAnswer)
     }
-    console.log(refineAnswer)
+    console.log(rawAnswer);
+    console.log(refineAnswer);
     $('.trivia-quiz-control').hide()
     $('.random-trivia-input').css("color",'white');
     $('.random-trivia-input').prop("disabled",true);
@@ -54,6 +62,9 @@ function submitTrivia(){
         $('#lottie-container').append(correctAnswerLottie);
     }
     else{
-        alert("wrong");
+        $('#lottie-container').empty()
+        $(".api-content-message").append("\
+        <p style='text-align:center;margin-top:25px'>Correct Answer<br>"+triviaData[0]['answer']+"</p>");
+        $('#lottie-container').append(wrongAnswerLottie);
     }
 }
