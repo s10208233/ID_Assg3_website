@@ -58,7 +58,7 @@ $("#idoggo").click(async function dog(){
         if (count > 0){
             $("#doggoDiv").empty();
             count--;
-            $("#doggoDiv").append("<img src='"+dogArray[count]+"' style='margin:0;'>")
+            $("#doggoDiv").append("<img src='"+dogArray[count]+"'>")
 
         }
         else{
