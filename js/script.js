@@ -44,12 +44,8 @@ function openAPI(buttonId){
         $("#prev").hide();
         $("#api-control-dog").show();
     }
-    if (buttonId == "api-nasa"){
-        $("#ModalLabel").html("Totally Not Hentai");
-        $('#api-content').empty();
-        $("#api-control-nasa").show();
-    }
     if (buttonId == "api-trivia"){
+        $("#ModalLabel").html("Extremely Difficult Trivias");
         $("#api-content").empty();
         $("#api-control-trivia").show();
     }
