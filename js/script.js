@@ -7,6 +7,7 @@ function openAPI(buttonId){
     $("#api-control-nasa").hide();
     $("#api-control-dog").hide();
     $("#api-control-trivia").hide();
+    $("#api-control-baguette").hide();
     var triviaData = null;
     console.log(buttonId)
     if (buttonId == "api-cards"){
@@ -44,6 +45,7 @@ function openAPI(buttonId){
         $("#api-control-dog").show();
     }
     if (buttonId == "api-nasa"){
+        $("#ModalLabel").html("Totally Not Hentai");
         $('#api-content').empty();
         $("#api-control-nasa").show();
     }
@@ -52,6 +54,7 @@ function openAPI(buttonId){
         $("#api-control-trivia").show();
     }
     if (buttonId == "api-baguette"){
+        $("#ModalLabel").html("Totally Not Hentai");
         $("#api-content").empty();
         $("#api-control-baguette").show();
     }
