@@ -112,3 +112,24 @@
     width: 500px;
 }
 
+.anime-baguette-container div{
+    display: block;
+    margin: 50px;
+    width: 75%;
+    justify-content: center;
+}
+
+.anime-baguette-container img{
+    margin: auto;
+    flex: auto;
+    height: 100%;
+    width: 100%;
+}
+
+.anime-baguette-container{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    justify-content: center;
+}

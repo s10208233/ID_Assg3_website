@@ -46,12 +46,12 @@ function openAPI(buttonId){
         $("#api-control-dog").show();
     }
     if (buttonId == "api-trivia"){
-        $("#ModalLabel").html("Trivia API")
+        $("#ModalLabel").html("Extremely Difficult Trivias");
         $("#api-content").empty();
         $("#api-control-trivia").show();
     }
     if (buttonId == "api-baguette"){
-        $("#ModalLabel").html("baguette API")
+        $("#ModalLabel").html("Totally Not Hentai");
         $("#api-content").empty();
         $("#api-control-baguette").show();
     }
