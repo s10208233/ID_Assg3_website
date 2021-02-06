@@ -7,6 +7,8 @@ function openAPI(buttonId){
     $("#api-control-nasa").hide();
     $("#api-control-dog").hide();
     $("#api-control-trivia").hide();
+    $("#api-control-advice").hide();
+    $("#api-control-baguette").hide();
     var triviaData = null;
     console.log(buttonId)
     if (buttonId == "api-cards"){
@@ -43,19 +45,22 @@ function openAPI(buttonId){
         $("#prev").hide();
         $("#api-control-dog").show();
     }
-    if (buttonId == "api-nasa"){
-        $('#api-content').empty();
-        $("#api-control-nasa").show();
-    }
     if (buttonId == "api-trivia"){
+        $("#ModalLabel").html("Trivia API")
         $("#api-content").empty();
         $("#api-control-trivia").show();
     }
     if (buttonId == "api-baguette"){
+        $("#ModalLabel").html("baguette API")
         $("#api-content").empty();
         $("#api-control-baguette").show();
     }
-
+    if (buttonId == "api-advice"){
+        $("#ModalLabel").html("Advice & Affirmation API")
+        $('#api-content').empty();
+        $("#api-control-advice").show();
+        $("#api-content").append('<div id="advDiv"></div>');
+    }
     
 
 }
