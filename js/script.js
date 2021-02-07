@@ -64,3 +64,19 @@ function openAPI(buttonId){
     
 
 }
+
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://interactivedev-34c7.restdb.io/rest/aita-user",
+    "method": "GET",
+    "headers": {
+      "content-type": "application/json",
+      "x-apikey": "601f96113f9eb665a1689212",
+      "cache-control": "no-cache"
+    }
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
