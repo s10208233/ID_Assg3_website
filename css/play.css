@@ -12,8 +12,8 @@
 }
 .api-card{
     width: 250px;
-    height: 300px;
-    background-color: black;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.408);
     display: flex;
     flex-direction: column;
     margin: 50px;
@@ -23,11 +23,13 @@
 
 .api-card img{
     display: block;
+    height: 200px;
+    width: 250px;
 }
 
 .api-card button{
     outline: none;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     height: 75px;
     width: 100%;
     border-style: none;
@@ -37,6 +39,8 @@
     background: rgb(70,47,149);
     background: linear-gradient(45deg, rgba(70,47,149,1) 15%, rgba(41,26,92,1) 100%);
     font-size: 16px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 .api-card button:hover{
     box-shadow: 0 0 10px 0 dodgerblue inset, 0 0 10px 4px dodgerblue;
