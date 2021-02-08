@@ -18,7 +18,7 @@ var botBool = "false";
 //starting the blackjack game
 $("#deckbtn").click(async function main(){
     
-    $("#start").hide();
+    $("#startdeck").hide();
     $("#winner").hide();
     $("#tie").hide();
     $("#error").hide();
@@ -380,7 +380,7 @@ $("#skip").click(function skip(){
                 $("#winner").show();   
                 setTimeout(function(){
                     $('#winner').hide();
-                    $("#start").show();
+                    $("#startdeck").show();
                     $("#deckbtn").show();
                 },3000)
             }
@@ -388,7 +388,7 @@ $("#skip").click(function skip(){
                 $("#tie").show();
                 setTimeout(function(){
                     $('#tie').hide();
-                    $("#start").show();
+                    $("#startdeck").show();
                     $("#deckbtn").show();
                 },3000)
             }
@@ -396,7 +396,7 @@ $("#skip").click(function skip(){
                 $("#loser").show();
                 setTimeout(function(){
                     $('#loser').hide();
-                    $("#start").show();
+                    $("#startdeck").show();
                     $("#deckbtn").show();
                 },3000)
             }

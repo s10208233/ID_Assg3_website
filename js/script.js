@@ -31,7 +31,7 @@ function openAPI(buttonId){
         $("#tie").hide();
         $("#api-content").append('<lottie-player src="https://assets6.lottiefiles.com/packages/lf20_ho8hW5.json" id="error" background="transparent"  speed="1"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>');
         $("#error").hide();
-        $("#api-content").append('<lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_klsv8ygt.json" id="start" background="transparent"  speed="2"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>')
+        $("#api-content").append('<lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_klsv8ygt.json" id="startdeck" background="transparent"  speed="2"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>')
         $("#draw").hide();
         $("#skip").hide();
         $("#deckbtn").show();
@@ -45,7 +45,8 @@ function openAPI(buttonId){
         $("#ModalLabel").html("Nasa API")
         $('#api-content').empty();
         $("#api-control-nasa").show();
-    }        $("#api-content").append('<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_0VBFAg.json"  background="transparent"  speed="2"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>')
+        $("#api-content").append('<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_0VBFAg.json"  background="transparent"  speed="2"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>')
+    }        
 
     if (buttonId == "api-dog"){
         $("#ModalLabel").html("Dog API") 
