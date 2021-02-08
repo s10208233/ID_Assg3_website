@@ -11,26 +11,36 @@
     justify-content: center;
 }
 .api-card{
-    width: 250px;
-    height: 250px;
-    background-color: rgba(255, 255, 255, 0.408);
+    width: 300px; height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+    background-color: rgba(255, 255, 255, 0.25);
     display: flex;
     flex-direction: column;
     margin: 50px;
     justify-content: center;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.175);
+    transition: 0.75s;
+}
+.api-card:hover{
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 10px 0 rgb(85, 30, 255) inset, 0 0 10px 4px rgb(85, 30, 255);
+    transform: scale(1.05);
+    transition: 0.1s;
 }
 
 .api-card img{
     display: block;
-    height: 200px;
-    width: 250px;
+    margin: auto;
+    padding: 0px;
+    max-height: 125px;
+    max-width: 125px;
 }
 
 .api-card button{
+    margin-bottom: 0px;
     outline: none;
-    /* margin-top: 50px; */
-    height: 75px;
+    min-height: 75px;
     width: 100%;
     border-style: none;
     color: #fff;
@@ -42,12 +52,12 @@
     padding-bottom: 10px;
     padding-top: 10px;
 }
-.api-card button:hover{
+/* .api-card button:hover{
     box-shadow: 0 0 10px 0 dodgerblue inset, 0 0 10px 4px dodgerblue;
     transition: 150ms ease-in-out;
     font-weight: bold;
     outline: none;
-}
+} */
 
 .api-card button:active{
     box-shadow: 0 0 10px 0 dodgerblue inset, 0 0 10px 4px dodgerblue;
