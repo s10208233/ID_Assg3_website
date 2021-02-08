@@ -1,4 +1,5 @@
 $("#idoggo").click(async function dog(){
+    $("#start").hide();
     $("#idoggo").hide();
     $("#next").show();
     $("#prev").show();
@@ -67,6 +68,7 @@ $("#idoggo").click(async function dog(){
             $("#idoggo").show();
             $("#next").hide();
             $("#prev").hide();
+            $("#start").show();
 
         }
         

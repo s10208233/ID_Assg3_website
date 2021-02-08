@@ -1,4 +1,5 @@
 function APOC(){
+    $("start").hide();
     $('#api-content').empty();
     fetch("https://api.nasa.gov/planetary/apod?api_key=Ej1PTXMfCnc8NPfky2OYSqjzkwnZNDdJRjeAOtQ0")
     .then(res=>res.json())
@@ -20,6 +21,7 @@ function APOC(){
         </div>\
         ")
     })
+
 }
 
 var photosLength = 0;

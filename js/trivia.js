@@ -21,6 +21,7 @@ function randomTrivia(){
         <button onclick='submitTrivia()' class='random-trivia-submit' style='font-weight:bold;'>Confirm</button>\
         </div>\
         ");
+
     })
 }
 
@@ -67,4 +68,5 @@ function submitTrivia(){
         <p style='text-align:center;margin-top:25px'>Correct Answer<br>"+triviaData[0]['answer']+"</p>");
         $('#lottie-container').append(wrongAnswerLottie);
     }
+
 }

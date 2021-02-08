@@ -1,6 +1,5 @@
 window.onload = function(){
     
-   
     
     if (sessionStorage.getItem("signedIn") == "false"){
         $("#sign-out").hide();
@@ -33,6 +32,7 @@ function openAPI(buttonId){
         $("#tie").hide();
         $("#api-content").append('<lottie-player src="https://assets6.lottiefiles.com/packages/lf20_ho8hW5.json" id="error" background="transparent"  speed="1"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>');
         $("#error").hide();
+        $("#api-content").append('<lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_klsv8ygt.json" id="start" background="transparent"  speed="2"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>')
         $("#draw").hide();
         $("#skip").hide();
         $("#deckbtn").show();
@@ -46,7 +46,8 @@ function openAPI(buttonId){
         $("#ModalLabel").html("Nasa API")
         $('#api-content').empty();
         $("#api-control-nasa").show();
-    }
+    }        $("#api-content").append('<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_0VBFAg.json"  background="transparent"  speed="2"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>')
+
     if (buttonId == "api-dog"){
         $("#ModalLabel").html("Dog API") 
         $('#api-content').empty();
@@ -55,22 +56,30 @@ function openAPI(buttonId){
         $("#next").hide();
         $("#prev").hide();
         $("#api-control-dog").show();
+        $("#api-content").append('<lottie-player src="https://assets5.lottiefiles.com/datafiles/qPXWoBoTK5HTARv/data.json" id="start" background="transparent"  speed="1"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>')
+
     }
     if (buttonId == "api-trivia"){
         $("#ModalLabel").html("Extremely Difficult Trivias");
         $("#api-content").empty();
         $("#api-control-trivia").show();
+        $("#api-content").append('<lottie-player src="https://assets5.lottiefiles.com/temp/lf20_9gY9Yf.json" background="transparent"  speed="1"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>')
     }
     if (buttonId == "api-baguette"){
         $("#ModalLabel").html("Totally Not Hentai");
         $("#api-content").empty();
         $("#api-control-baguette").show();
+        $("#api-content").append('<lottie-player src="https://assets2.lottiefiles.com/packages/lf20_klQ5nz.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>')
+
     }
     if (buttonId == "api-advice"){
         $("#ModalLabel").html("Advice & Affirmation API")
         $('#api-content').empty();
         $("#api-control-advice").show();
         $("#api-content").append('<div id="advDiv"></div>');
+        $("#api-content").append('<lottie-player src="https://assets2.lottiefiles.com/packages/lf20_gljfhpo3.json" id="start" background="transparent"  speed="1"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>')
+        $("#api-content").append('<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_4bHeKl.json" id="load" background="transparent"  speed="1"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>')
+        $("#load").hide();
     }
     
 
@@ -96,7 +105,9 @@ let userDataAPIsettings = {
   });
 
 //   ON CLICK SIGN IN
+
 function signIn(){
+    
     if (document.getElementById("sign-in-email").value == "" || document.getElementById("sign-in-password").value == ""){
         alert("Please complete the fields before signing in.");
     }
@@ -111,7 +122,11 @@ function signIn(){
             return;
             }
         }
+        $("#signInError").append("<lottie-player src='https://assets8.lottiefiles.com/packages/lf20_slGFhN.json'  background='transparent'  speed='1'  style='width: 100px; height: 100px; margin: auto;'   autoplay></lottie-player>");
         alert("Invalid account, user does not exist.")
+        setTimeout(function(){
+            $("#signInError").empty();
+        },5000)
     }
 }
 
