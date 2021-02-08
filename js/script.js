@@ -1,6 +1,13 @@
-// window.onload = function(){
-//     $("#api-control-cards").hide();
-// };
+window.onload = function(){
+    if (sessionStorage.getItem("signedIn") == false || sessionStorage.getItem("signedIn") == null){
+        $("#sign-out").hide();
+        $("#sign-in").hide();
+    }
+    else{
+        $("#sign-out").show();
+        $("#sign-in").hide();
+    }
+};
 
 function openAPI(buttonId){
     $("#api-control-cards").hide();
@@ -65,7 +72,9 @@ function openAPI(buttonId){
 
 }
 
-var settings = {
+// SIGN IN DATA
+var userData = null;
+let userDataAPIsettings = {
     "async": true,
     "crossDomain": true,
     "url": "https://interactivedev-34c7.restdb.io/rest/aita-user",
@@ -77,6 +86,35 @@ var settings = {
     }
   }
   
-  $.ajax(settings).done(function (response) {
+  $.ajax(userDataAPIsettings).done(function (response) {
     console.log(response);
+    userData = response
   });
+
+//   ON CLICK SIGN IN
+function signIn(){
+    if (document.getElementById("sign-in-email").value == "" || document.getElementById("sign-in-password").value == ""){
+        alert("Please complete the fields before signing in.");
+    }
+    else{
+        for (i = 0; i < userData.length; i++){
+            if(userData[i].email == document.getElementById("sign-in-email").value && userData[i].password == document.getElementById("sign-in-password").value){
+            $("#sign-out").hide();
+            sessionStorage.setItem("signedIn",true);
+            $("#sign-in").hide();
+            $("#sign-out").show();
+            $("#sign-in-out").click();
+            return;
+            }
+        }
+        alert("Invalid account, user does not exist.")
+    }
+}
+
+// ON CLICK SIGN OUT
+function signOut(){
+    sessionStorage.setItem("signedIn",false);
+    $("#sign-in").show();
+    $("#sign-out").hide();
+    $("#sign-in-out").click();
+}
