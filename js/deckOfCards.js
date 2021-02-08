@@ -18,7 +18,7 @@ var botBool = "false";
 //starting the blackjack game
 $("#deckbtn").click(async function main(){
     
-    $("#start").hide();
+    $("#startdeck").hide();
     $("#winner").hide();
     $("#tie").hide();
     $("#error").hide();
@@ -36,6 +36,8 @@ $("#deckbtn").click(async function main(){
         return response.json();
     }
     else {
+        $("#playerHand").empty();
+        $("#botHand").empty();
         $("#error").show();
         $("#skip").hide();
         $("#draw").hide();
@@ -306,16 +308,16 @@ $("#skip").click(function skip(){
 
     setTimeout(function(){
         $("#botHand").show();
- 
+        $("#draw").hide();
+        $("#skip").hide();
         if (value >= 16 && value <= 21 && value > botValue){
             // console.log("skip: "+value);
             // console.log("YOu win")
             console.log("w/l: "+1);
             alert("You won the round!");
             outcome = "win"
-            $("#deckbtn").show();
-            $("#draw").hide();
-            $("#skip").hide();
+ 
+
             imgSrc3 = "";
             imgSrc4 = "";
             
@@ -324,17 +326,16 @@ $("#skip").click(function skip(){
         else if ((value < 16 || value > 21) && (botValue < 16 || botValue > 21)){
             alert("Its a tie!");
             outcome = "tie"
-            $("#draw").hide();
-            $("#skip").hide();
+
+
             imgSrc3 = "";
             imgSrc4 = "";
         }
         else if(botValue < 16 || botValue > 21){
             alert("You won the round!");
             outcome = "win"
-            $("#deckbtn").show();
-            $("#draw").hide();
-            $("#skip").hide();
+
+
             imgSrc3 = "";
             imgSrc4 = "";
         }
@@ -342,9 +343,8 @@ $("#skip").click(function skip(){
             alert("You lost the round!");
             outcome = "lost"
             console.log("w/l: "+2);
-            $("#deckbtn").show();
-            $("#draw").hide();
-            $("#skip").hide();
+
+
             imgSrc3 = "";
             imgSrc4 = "";
             
@@ -353,8 +353,8 @@ $("#skip").click(function skip(){
         else if(value === botValue){
             alert("Its a tie!");
             outcome = "tie"
-            $("#draw").hide();
-            $("#skip").hide();
+
+
             imgSrc3 = "";
             imgSrc4 = "";
         }
@@ -362,16 +362,14 @@ $("#skip").click(function skip(){
             alert("You lost the round!");
             outcome = "lost"
             console.log("w/l: "+3);
-            $("#deckbtn").show();
-            $("#draw").hide();
-            $("#skip").hide();
+
             imgSrc3 = "";
             imgSrc4 = "";
             
             
         }
 
-        $("#deckbtn").hide();
+
         setTimeout(function(){
             $('#playerHand').empty();
             $('#botHand').empty();
@@ -380,7 +378,7 @@ $("#skip").click(function skip(){
                 $("#winner").show();   
                 setTimeout(function(){
                     $('#winner').hide();
-                    $("#start").show();
+                    $("#startdeck").show();
                     $("#deckbtn").show();
                 },3000)
             }
@@ -388,7 +386,7 @@ $("#skip").click(function skip(){
                 $("#tie").show();
                 setTimeout(function(){
                     $('#tie').hide();
-                    $("#start").show();
+                    $("#startdeck").show();
                     $("#deckbtn").show();
                 },3000)
             }
@@ -396,7 +394,7 @@ $("#skip").click(function skip(){
                 $("#loser").show();
                 setTimeout(function(){
                     $('#loser').hide();
-                    $("#start").show();
+                    $("#startdeck").show();
                     $("#deckbtn").show();
                 },3000)
             }
