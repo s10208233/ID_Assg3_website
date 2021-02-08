@@ -1,9 +1,13 @@
 window.onload = function(){
-    if (sessionStorage.getItem("signedIn") == false || sessionStorage.getItem("signedIn") == null){
+    
+   
+    
+    if (sessionStorage.getItem("signedIn") == "false"){
         $("#sign-out").hide();
-        $("#sign-in").hide();
+        $("#sign-in").show();
     }
     else{
+        sessionStorage.setItem("signedIn",true)
         $("#sign-out").show();
         $("#sign-in").hide();
     }
