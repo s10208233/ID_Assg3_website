@@ -170,12 +170,13 @@
                       <label for="exampleInputPassword1" class="form-label">Password</label>
                       <input type="password" class="form-control" id="sign-in-password">
                     </div>
-                    <button type="submit" class="btn btn-primary" onclick="signIn()">Sign In</button>
+                    <button id="confirm-sign-in-btn" type="submit" class="btn btn-primary" onclick="signIn()">Sign In</button>
                     <button type="submit" class="btn btn-secondary" onclick="createUser()">Create New Account</button>
                   </form>
               </div>
               <!-- CREATE ACCOUNT DIV -->
               <div id="create-user-content">
+                <div id="createError"></div>
                 <h3>New Users</h3>
                 <form>
                     <div class="mb-3">
