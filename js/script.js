@@ -1,7 +1,5 @@
 window.onload = function(){
-    
-   
-    
+    $("#create-user-content").hide();
     if (sessionStorage.getItem("signedIn") == "false"){
         $("#sign-out").hide();
         $("#sign-in").show();
@@ -101,7 +99,11 @@ function signIn(){
         alert("Please complete the fields before signing in.");
     }
     else{
+        let emailFound = false;
         for (i = 0; i < userData.length; i++){
+            if (userData[i].email == document.getElementById("sign-in-email").value){
+                emailFound = true;
+            }
             if(userData[i].email == document.getElementById("sign-in-email").value && userData[i].password == document.getElementById("sign-in-password").value){
             $("#sign-out").hide();
             sessionStorage.setItem("signedIn",true);
@@ -111,7 +113,12 @@ function signIn(){
             return;
             }
         }
-        alert("Invalid account, user does not exist.")
+        if (emailFound == false){
+            alert("Invalid account, user does not exist.")
+        }
+        else {
+            alert("Incorrect password, try again.")
+        }
     }
 }
 
@@ -121,4 +128,51 @@ function signOut(){
     $("#sign-in").show();
     $("#sign-out").hide();
     $("#sign-in-out").click();
+}
+
+// CREATE USER
+function updateAgeDisplay(val) {
+    document.getElementById('age-display').value=val; 
+}
+
+function updateAgeSlider(val){
+    document.getElementById('age-slider').value=val; 
+}
+
+function createUser(){
+    $("#sign-in-content").hide();
+    $("#create-user-content").show();
+}
+
+function submitCreateUser(){
+    let jsondata = {
+        "first_name": document.getElementById("create-firstname").value,
+        "last_name": document.getElementById("create-lastname").value,
+        "age":document.getElementById("age-display").value,
+        "email":document.getElementById("create-email").value,
+        "password":document.getElementById("create-password").value
+    }
+    let settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://interactivedev-34c7.restdb.io/rest/aita-user",
+    "method": "POST",
+    "headers": {
+        "content-type": "application/json",
+        "x-apikey": "601f96113f9eb665a1689212",
+        "cache-control": "no-cache"
+    },
+    "processData": false,
+    "data": JSON.stringify(jsondata)
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+}
+
+
+function cancelCreateUser(){
+    $("#sign-in-content").show();
+    $("#create-user-content").hide();
 }
