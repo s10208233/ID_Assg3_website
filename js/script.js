@@ -11,6 +11,7 @@ window.onload = function(){
     }
 };
 
+
 function openAPI(buttonId){
     $("#api-control-cards").hide();
     $("#api-control-nasa").hide();
@@ -220,8 +221,24 @@ $.ajax(settings).done(function (response) {
 });
 }
 
-
 function cancelCreateUser(){
     $("#sign-in-content").show();
     $("#create-user-content").hide();
 }
+
+// Back To Top Btn
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 250) {
+    $('#back-to-top-btn').show();
+  } else {
+    $('#back-to-top-btn').hide();
+  }
+});
+
+$('#back-to-top-btn').on('click', function(e) {
+  scrollTo("");
+});
+
+
+
