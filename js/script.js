@@ -11,6 +11,7 @@ window.onload = function(){
     }
 };
 
+
 function openAPI(buttonId){
     $("#api-control-cards").hide();
     $("#api-control-nasa").hide();
@@ -122,20 +123,37 @@ function signIn(){
             sessionStorage.setItem("signedIn",true);
             $("#sign-in").hide();
             $("#sign-out").show();
-            $("#sign-in-out").click();
+            $("#confirm-sign-in-btn").hide()
+            $("#signInError").append("<lottie-player src='https://assets8.lottiefiles.com/private_files/lf30_x0qiw13f.json'  background='transparent'  speed='1.5'  style='width: 150px; height: 150px; margin: auto;'   autoplay></lottie-player>");
+            setTimeout(function(){
+                $("#sign-in-out").click();
+                $("#signInError").empty();
+                $("#confirm-sign-in-btn").show()
+            },2500);
             return;
             }
         }
-        $("#signInError").append("<lottie-player src='https://assets8.lottiefiles.com/packages/lf20_slGFhN.json'  background='transparent'  speed='1'  style='width: 100px; height: 100px; margin: auto;'   autoplay></lottie-player>");
-        alert("Invalid account, user does not exist.")
-        setTimeout(function(){
-            $("#signInError").empty();
-        },5000)
         if (emailFound == false){
-            alert("Invalid account, user does not exist.")
+            $("#signInError").append("<lottie-player src='https://assets8.lottiefiles.com/packages/lf20_slGFhN.json'  background='transparent'  speed='1'  style='width: 100px; height: 100px; margin: auto;'   autoplay></lottie-player>");
+            $("#signInError").append("<p style='text-align:center;'>Invalid account, user does not exist.</p>")
+            $("#confirm-sign-in-btn").hide()
+            // alert("Invalid account, user does not exist.")
+            setTimeout(function(){
+                $("#signInError").empty();
+                $("#confirm-sign-in-btn").show()
+            },2500)
+            return;
         }
         else {
-            alert("Incorrect password, try again.")
+            $("#signInError").append("<lottie-player src='https://assets8.lottiefiles.com/packages/lf20_slGFhN.json'  background='transparent'  speed='1'  style='width: 100px; height: 100px; margin: auto;'   autoplay></lottie-player>");
+            $("#signInError").append("<p style='text-align:center;'>Incorrect password, try again.</p>")
+            $("#confirm-sign-in-btn").hide()
+            setTimeout(function(){
+                $("#signInError").empty();
+                $("#confirm-sign-in-btn").show()
+            },2500)
+            // alert("Incorrect password, try again.")
+            return;
         }
     }
 }
@@ -163,6 +181,20 @@ function createUser(){
 }
 
 function submitCreateUser(){
+    if (
+        document.getElementById("create-firstname").value == "" ||
+        document.getElementById("create-lastname").value == "" ||
+        document.getElementById("age-display").value == "" ||
+        document.getElementById("create-email").value == "" ||
+        document.getElementById("create-password").value == ""
+    ){
+        $("#createError").append("<lottie-player src='https://assets8.lottiefiles.com/packages/lf20_slGFhN.json'  background='transparent'  speed='1'  style='width: 100px; height: 100px; margin: auto;'   autoplay></lottie-player>");
+        $("#createError").append("<p style='text-align:center;'>Please make sure all input fields are filled.</p>")
+        setTimeout(function(){
+            $("#createError").empty();
+        },2500)
+        return;
+    }
     let jsondata = {
         "first_name": document.getElementById("create-firstname").value,
         "last_name": document.getElementById("create-lastname").value,
@@ -189,8 +221,24 @@ $.ajax(settings).done(function (response) {
 });
 }
 
-
 function cancelCreateUser(){
     $("#sign-in-content").show();
     $("#create-user-content").hide();
 }
+
+// Back To Top Btn
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 250) {
+    $('#back-to-top-btn').show();
+  } else {
+    $('#back-to-top-btn').hide();
+  }
+});
+
+$('#back-to-top-btn').on('click', function(e) {
+  scrollTo("");
+});
+
+
+
