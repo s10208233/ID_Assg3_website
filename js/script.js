@@ -3,11 +3,13 @@ window.onload = function(){
     if (sessionStorage.getItem("signedIn") == "false"){
         $("#sign-out").hide();
         $("#sign-in").show();
+        $("#baguette-card").hide();
     }
     else{
         sessionStorage.setItem("signedIn",true)
         $("#sign-out").show();
         $("#sign-in").hide();
+        $("#baguette-card").show();
     }
 };
 
@@ -124,6 +126,7 @@ function signIn(){
             $("#sign-in").hide();
             $("#sign-out").show();
             $("#confirm-sign-in-btn").hide()
+            $("#baguette-card").show();
             $("#signInError").append("<lottie-player src='https://assets8.lottiefiles.com/private_files/lf30_x0qiw13f.json'  background='transparent'  speed='1.5'  style='width: 150px; height: 150px; margin: auto;'   autoplay></lottie-player>");
             setTimeout(function(){
                 $("#sign-in-out").click();
@@ -164,6 +167,7 @@ function signOut(){
     $("#sign-in").show();
     $("#sign-out").hide();
     $("#sign-in-out").click();
+    $("#baguette-card").hide();
 }
 
 // CREATE USER

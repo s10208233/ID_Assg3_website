@@ -7,8 +7,10 @@ var triviaData = null;
 function randomTrivia(){
     triviaData = null;
     $("#api-content").empty();
+    $("#api-content").append('<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_Q2FX6B.json"  background="transparent"  speed="1"  style="margin:auto;width: 300px; height: 300px;"  loop  autoplay></lottie-player>');
     fetch("https://jservice.io/api/random").then(res=>res.json())
     .then(data=>{
+        $("#api-content").empty();
         triviaData = data;
         $("#api-content").append("\
         <div id='lottie-container'>"+questionMarkLottie+"</div>\

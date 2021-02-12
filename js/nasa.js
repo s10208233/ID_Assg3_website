@@ -1,9 +1,11 @@
 function APOC(){
     $("start").hide();
     $('#api-content').empty();
+    $("#api-content").append('<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_Q2FX6B.json"  background="transparent"  speed="1"  style="margin:auto;width: 300px; height: 300px;"  loop  autoplay></lottie-player>');
     fetch("https://api.nasa.gov/planetary/apod?api_key=Ej1PTXMfCnc8NPfky2OYSqjzkwnZNDdJRjeAOtQ0")
     .then(res=>res.json())
     .then(data=>{
+        $('#api-content').empty();
         if (data['media_type'] == 'video'){
             $("#api-content").append('<iframe width="100%" height="500px"src="'+data["url"]+'"></iframe>')
         }
@@ -28,9 +30,11 @@ var photosLength = 0;
 var MRPdata = null;
 function MRP(btnChoice){
     $('#api-content').empty();
+    $("#api-content").append('<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_Q2FX6B.json"  background="transparent"  speed="1"  style="margin:auto;width: 300px; height: 300px;"  loop  autoplay></lottie-player>');
     fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=Ej1PTXMfCnc8NPfky2OYSqjzkwnZNDdJRjeAOtQ0")
     .then(res=>res.json())
     .then(data=>{
+        $('#api-content').empty();
         if (btnChoice == "MRPstart"){
             photosLength = 0;
         }
