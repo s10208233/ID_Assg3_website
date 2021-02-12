@@ -1,4 +1,5 @@
 window.onload = function(){
+    $('#back-to-top-btn').hide();
     $("#create-user-content").hide();
     if (sessionStorage.getItem("signedIn") == "false"){
         $("#sign-out").hide();
@@ -9,7 +10,8 @@ window.onload = function(){
         sessionStorage.setItem("signedIn",true)
         $("#sign-out").show();
         $("#sign-in").hide();
-        $("#baguette-card").show();
+        if (sessionStorage.getItem("age")>=18){$("#baguette-card").show();}
+        else {$("#baguette-card").hide()}
     }
 };
 
@@ -126,7 +128,8 @@ function signIn(){
             $("#sign-in").hide();
             $("#sign-out").show();
             $("#confirm-sign-in-btn").hide()
-            $("#baguette-card").show();
+            sessionStorage.setItem("age",userData[i].age)
+            if(userData[i].age >= 18){$("#baguette-card").show();}else{$("#baguette-card").hide();}
             $("#signInError").append("<lottie-player src='https://assets8.lottiefiles.com/private_files/lf30_x0qiw13f.json'  background='transparent'  speed='1.5'  style='width: 150px; height: 150px; margin: auto;'   autoplay></lottie-player>");
             setTimeout(function(){
                 $("#sign-in-out").click();
@@ -163,6 +166,7 @@ function signIn(){
 
 // ON CLICK SIGN OUT
 function signOut(){
+    sessionStorage.removeItem("age");
     sessionStorage.setItem("signedIn",false);
     $("#sign-in").show();
     $("#sign-out").hide();
@@ -218,11 +222,13 @@ function submitCreateUser(){
     },
     "processData": false,
     "data": JSON.stringify(jsondata)
-}
+    }
 
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
+    $.ajax(settings).done(function (response) {
+    console.log(response);
+    });
+
+    cancelCreateUser();
 }
 
 function cancelCreateUser(){

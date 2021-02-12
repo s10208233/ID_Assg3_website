@@ -34,46 +34,54 @@
     .modal-footer{
         border-color: rgba(255, 255, 255, 0.1)
     }
+    .nav-link{
+      color: rgba(255, 255, 255, 0.20);
+    }
+    .navbar-dark .navbar-nav .nav-link{
+      color:rgba(255, 255, 255, 0.15);
+    }
 </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar navbar-dark bg-dark" aria-label="Second navbar example">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">AITA</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
+  <a href="#" id="back-to-top-btn"><lottie-player src="https://assets7.lottiefiles.com/private_files/lf30_9pixomne.json"  background="transparent"  speed="0.75"  style="width: 50px; height: 50px;"  loop  autoplay></lottie-player></a>
+  <nav class="navbar navbar-expand-sm navbar navbar-dark bg-dark" aria-label="Second navbar example">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="images/aita-logo.png" style="width: 25px; height: 25px;margin-top: -9px;margin-right: 10px;">AITA</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
 
-            <div class="collapse navbar-collapse" id="navbarsExample02">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item active">
-                    <a class="nav-link" id="current-page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="play.html">Games</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact Us</a>
-                    </li>
-                    
-                    
-                </ul>
-                <!-- RIGHT SIDE -->
-                <ul class="navbar-nav ml-auto flex-nowrap">
-                    <li id="sign-out" class="nav-item">
-                        <a href="#" class="nav-link" onclick="signOut()">Sign Out</a>
-                    </li>
-                    <li id="sign-in" class="nav-item">
-                        <a href="" class="nav-link" data-bs-toggle="modal" data-bs-target="#sign-in-out">Sign In</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        </nav>
+          <div class="collapse navbar-collapse" id="navbarsExample02">
+          <ul class="navbar-nav me-auto">
+              <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="play.html">Games</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" id="current-page" href="about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+              
+              
+          </ul>
+          <!-- RIGHT SIDE -->
+          <ul class="navbar-nav ml-auto flex-nowrap">
+              <li id="sign-out" class="nav-item">
+                  <a href="#" class="nav-link" onclick="signOut()">Sign Out</a>
+              </li>
+              <li id="sign-in" class="nav-item">
+                  <a href="" class="nav-link" data-bs-toggle="modal" data-bs-target="#sign-in-out">Sign In</a>
+              </li>
+          </ul>
+          </div>
+      </div>
+      </nav>
+
 
     <div class="banner">
         <lottie-player src="https://assets2.lottiefiles.com/private_files/lf30_z1csl90d.json"  speed="1"  loop  autoplay></lottie-player>
@@ -119,19 +127,13 @@
           </div>
         </div>
       </div>
-    <footer>
-        <ul class="footer-links">
-            <li class="nav-item active">
-                <a class="nav-link" id="current-page" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
-                </li>
-            </li>
-        </ul>
+      <footer>
+        <div class="footer-links">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="play.html">Games</a>
+            <a class="nav-link" href="about.html">About Us</a>
+            <a class="nav-link" href="contact.html">Contact Us</a>
+        </div>
     </footer>
 </body>
 </html>
