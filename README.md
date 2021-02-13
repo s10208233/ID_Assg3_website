@@ -1,8 +1,5 @@
-# Your Project's Name
-
-One or two paragraphs providing an overview of your project. Tell us about your project.
-
-Essentially, this part is your sales pitch.
+# AITA
+AITA stands for "An Introduction to APIs". This website aims to give a basic understand how an API work and letting users try out various APIs on the site as well.
  
 ## Design Process
  
