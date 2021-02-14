@@ -5,7 +5,6 @@ $("#idoggo").click(async function dog(){
     $("#prev").show();
     dogArray = [];
     count = 0;
-
     await fetch("https://dog.ceo/api/breeds/image/random")
     .then(response=>{
         if (response.ok) {

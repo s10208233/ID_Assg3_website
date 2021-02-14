@@ -2,17 +2,26 @@
 AITA stands for "An Introduction to APIs". This website aims to give a basic understand how an API work and letting users try out various APIs on the site as well.
  
 ## Design Process
- 
-Provide us insights about your design process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+As an informative website giving informative about APIs on an introductory level, as such, animations will be an essential part of the design implementation for users understand the content visually. AITA also provides ready to use APIs for users to have a more experential learning.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
+**Example Scenario (May not be the most accurate)**
+> 1. Students like Lester or Keng Shion, as IT students coming across a new topic like API.<br>
+> 2. Feeling blur like sotong after lesson and even googling does not help.
+> 3. Stumbled across this website after seeing the beautiful landing page filled with animations, the students suddenly got a better understanding.
+> 4. Finally after playing the games these students have finally grasp the basic concept of API!
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. 
-These files should themselves either be included as a pdf file in the project itself (in an separate directory)
-Include the Adobe XD wireframe as a folder. You can include the XD share url. 
+View the wireframe:
+https://xd.adobe.com/view/01023a2c-5511-4685-937a-656d35b09470-5451/
 
 ## Features
+### [Homepage - index.html]
+INSERT LINK HERE
+The homepage displays an banner of 'AITA' followed by a simple infographic style explaination of how API requests works layed out from top to bottom.
+
+### [Play - play.html]
+INSERT LINK HERE
+The Play page in AITA allows users to test with working public APIs
+####
 
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
  
