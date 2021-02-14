@@ -21,7 +21,13 @@ The homepage displays an banner of 'AITA' followed by a simple infographic style
 ### [Play - play.html]
 INSERT LINK HERE
 The Play page in AITA allows users to test with working public APIs
-####
+### [About - about.html]
+INSERT LINK HERE
+A short paragraph about us and what the website is for
+
+### [Contact - contact.html]
+INSERT LINK HERE
+For futher enquiries users can use the contact form to contact us.
 
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
  

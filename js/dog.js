@@ -1,3 +1,4 @@
+//click button to fetch img
 $("#idoggo").click(async function dog(){
     $("#start").hide();
     $("#idoggo").hide();
@@ -16,13 +17,14 @@ $("#idoggo").click(async function dog(){
     })
     .then(data=>{
         console.log(data)
+        //fetch and push the img link into a array
         dogArray.push(data.message)
         $("#doggoDiv").append("<img src='"+dogArray[count]+"'>")
     })
     .catch((error)=>{
         console.log(error)
     })  
-
+    //fetch the next photo
     $("#next").click(async function(){
 
         if (count+1 == dogArray.length){
@@ -54,6 +56,7 @@ $("#idoggo").click(async function dog(){
         
     
     })
+    //shows the previous img using the array
     $("#prev").click(function(){
         if (count > 0){
             $("#doggoDiv").empty();

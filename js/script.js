@@ -15,7 +15,8 @@ window.onload = function(){
     }
 };
 
-
+// function to open and show the correct api 
+// mostly is to hide and show the correct buttons and append correct divs to the model
 function openAPI(buttonId){
     $("#api-control-cards").hide();
     $("#api-control-nasa").hide();

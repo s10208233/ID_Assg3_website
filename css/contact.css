@@ -1,14 +1,9 @@
 .banner{
     background-color: #001835;
-    min-height:900px;
+    min-height:1500px;
     color: white;
 }
 
-#contact{
-    display: flex;
-    flex-direction: row;
-    margin:auto;
-}
 
 #form lottie-player{
     margin: auto;
@@ -38,4 +33,28 @@
 }
 #floatingInputGrid{
     height: 250px;
+}
+
+#container{
+    position: absolute;
+    background-color: #00aeff36;
+    top:800px;
+    left:0px;
+    right:0px;
+    color: white;
+    width: 600px;
+    height: 500px;
+    text-align: center;
+    overflow-y: scroll;
+    
+
+    
+}
+
+#container th{
+    color: white;
+
+}
+#container tbody{
+    color: white;
 }

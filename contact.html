@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Homepage</title>
-<link rel="stylesheet" href="normalize.css">
+<!-- <link rel="stylesheet" href="normalize.css"> -->
 <link rel="icon" href="images/favicon.png" sizes="15x15">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/contact.css">
@@ -18,21 +18,23 @@
 <style>
     /* THIS CSS WILL OVERRIDE BOOTSRAP's STYLING */
     body{
-        font-family: 'Jura', sans-serif;
+      font-family: 'Jura', sans-serif;
+      background-color: #00aeff;
+      min-height: 900px;
     }
     button{
-        outline: none;
+      outline: none;
     }
     .modal-header{
-        border-color: rgba(255, 255, 255, 0.1)
+      border-color: rgba(255, 255, 255, 0.1)
     }
     .modal-content {
-        color:white;
-        background-color: #001835ec;
+      color:white;
+      background-color: #001835ec;
         
     }
     .modal-footer{
-        border-color: rgba(255, 255, 255, 0.1)
+      border-color: rgba(255, 255, 255, 0.1)
     }
     .nav-link{
       color: rgba(255, 255, 255, 0.20);
@@ -85,28 +87,36 @@
     <div class="banner">
         <lottie-player src="https://assets2.lottiefiles.com/private_files/lf30_z1csl90d.json"  speed="1"  loop  autoplay></lottie-player>
     </div>
-    <div id="form"> 
+    <form id="form"> 
         <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_5gkfQ5.json"  background="transparent"  speed="1" loop autoplay></lottie-player>
         <h1>Contact Us</h3>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Full name" aria-label="Full name" aria-describedby="basic-addon1">
+            <input type="text" id="fullName" class="form-control" placeholder="Full name" aria-label="Full name" aria-describedby="basic-addon1">
         </div>   
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2">
-            <span class="input-group-text" id="basic-addon2">@example.com</span>
+            <input type="text" id="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2">
         </div>
           
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username">
-            <span class="input-group-text">@</span>
-            <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+            <input type="text" id="userName" class="form-control" placeholder="Username" aria-label="Username">
           </div>
           
           <div class="form-floating">
-            <input type="textarea" class="form-control" id="floatingInputGrid">
+            <input type="textarea" class="form-control" id="feedback" id="floatingInputGrid">
             <label for="floatingInputGrid">Your feedback</label>
           </div>
-    </div> 
+          <button type="button" id="contactSubmit" class="btn btn-dark" style="width: 100%; margin-top: 10px;">Submit</button>
+    </form> 
+    <div id="container" class="container mt-5">
+      <h2>Number of respondants (<span id="total-contacts"></span>)</h2>
+      <table class="table" id="contact-list">
+        <thead>
+          <th>Username</th>
+          <th>Email</th>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
 
     <!-- SIGN IN / SIGN OUT MODAL -->
     <div class="modal fade" id="sign-in-out" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -151,5 +161,6 @@
             <a class="nav-link" href="contact.html">Contact Us</a>
         </div>
     </footer>
+    <script src="js/contact.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 
 
-
+//initialising values to use
 var value = 0;
 var botValue = 0;
 
@@ -17,7 +17,7 @@ var botBool = "false";
 
 //starting the blackjack game
 $("#deckbtn").click(async function main(){
-    
+    //hiding and showing correct buttons
     $("#startdeck").hide();
     $("#winner").hide();
     $("#tie").hide();
@@ -29,7 +29,8 @@ $("#deckbtn").click(async function main(){
     $("#botHand").hide();
     $("#playerHand").append('<h1>Your hand</h1>');
     $("#botHand").append("<h1>Opponent's hand</h1>");  
-
+    
+    //api fetch
     await fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/draw/?count=4")
     .then(response=>{
         if (response.ok) {
@@ -147,6 +148,7 @@ $("#deckbtn").click(async function main(){
         $("#playerHand").append("<img src='"+imgSrc2+"'>");
         $("#botHand").append("<img src='"+imgSrc3+"'>");
         $("#botHand").append("<img src='"+imgSrc4+"'>");
+        //checking whether the cards is correct value
         console.log("player: "+value)
         console.log("bot: "+botValue)
     })
@@ -167,6 +169,7 @@ $("#draw").click(async function draw(){
     }
     })
     .then(data=>{
+        //this is to check whether the drawn card is a ACE
         if (playerBool === "false"){
             if (data.cards[0].value == "ACE"){
                 value = value + 1;
@@ -199,15 +202,15 @@ $("#draw").click(async function draw(){
     })
 })
 
-
+//The bot will randomly draw cards to make it feel more like playing against a real player
 function botDrawing(){
-    
+    //random number function
     function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-
+    //the bot will draw randomly
     if (botValue > 16 && botValue < 19){
         if (getRandomInt(0,1) == 1){
             fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/draw/?count=1")
@@ -253,6 +256,7 @@ function botDrawing(){
 
         }
     }
+    //the bot will have to draw if the value is < 16
     else if (botValue < 16){
         fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/draw/?count=1")
         .then(response=>{
@@ -305,11 +309,12 @@ $("#skip").click(function skip(){
     botDrawing();
     
     
-
+    //yimeout needed so the values are calculated correctly
     setTimeout(function(){
         $("#botHand").show();
         $("#draw").hide();
         $("#skip").hide();
+        //this is to check and show whether the player has won or lost
         if (value >= 16 && value <= 21 && value > botValue){
             // console.log("skip: "+value);
             // console.log("YOu win")
@@ -369,7 +374,7 @@ $("#skip").click(function skip(){
             
         }
 
-
+        //after a round the screen will reset and show correct buttons for player to play again
         setTimeout(function(){
             $('#playerHand').empty();
             $('#botHand').empty();
@@ -410,31 +415,4 @@ $("#skip").click(function skip(){
 
 
     
-
-// document.getElementById('deckbtn').addEventListener('click', function thisfunction(){
-//     if ( document.getElementById('api-content') != null){
-//         document.getElementById('api-content').remove();
-//     }
-
-//     fetch(url)
-//     .then(response=>{
-//         if (response.ok) {
-//         return response.json();
-//     }
-//     else {
-//         //error catching
-//         alert("The breed you searched for is not available! Try again!")
-//     }
-//     })
-//     .then(data=>{
-//     let results = data.cards.image;
-//     let img = document.createElement('img')
-//     img.src = results;
-//     document.getElementById('api-content').appendChild(img)
-    
-//     })
-//     .catch((error)=>{
-//     console.log(error)
-//     })  
-// });
 

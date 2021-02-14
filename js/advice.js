@@ -1,3 +1,4 @@
+//click to fetch advice
 $("#adv").click(function(){
     $("#start").hide();
     $("#advDiv").empty();
@@ -19,6 +20,7 @@ $("#adv").click(function(){
         console.log(data)
         $("#advDiv").append("<h3 style='text-align:center'>"+data.slip.advice+"</h3>")
         $("#advDiv").hide();
+        //timeout needed because the api does not fetch a new text everytime and time is needed in between each fetch to change the text
         setTimeout(function(){
         $("#advDiv").show();
         $("#adv").show();   
@@ -30,7 +32,7 @@ $("#adv").click(function(){
         console.log(error)
     })  
 })
-
+//click to fetch affirmation 
 $("#aff").click(function(){
     $("#start").hide();
     $("#advDiv").empty();
