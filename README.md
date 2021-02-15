@@ -14,20 +14,22 @@ View the wireframe:
 https://xd.adobe.com/view/01023a2c-5511-4685-937a-656d35b09470-5451/
 
 ## Features
-### [Homepage - index.html]
-INSERT LINK HERE
+### [Homepage - index.html](https://s10208233.github.io/ID_Assg3_website/index.html)
+https://s10208233.github.io/ID_Assg3_website/index.html
 The homepage displays an banner of 'AITA' followed by a simple infographic style explaination of how API requests works layed out from top to bottom.
 
 ### [Play - play.html]
 INSERT LINK HERE
-The Play page in AITA allows users to test with working public APIs
+The Play page in AITA allows users to test or play with working public APIs made into mini-games. Various minigames are stated below.
 
 #### Blackjack
-Features a playable Blackjack game for players/users to play against an opponent which makes random moves based 
+Features a playable Blackjack game for players/users to play against an opponent which makes moves based on the random function in javascript.
 
 #### NASA
+Retrieves daily posts from the official NASA website and has pictures from various rovers on the planet Mars.
 
 #### Trivia
+
 
 #### Dogs
 
@@ -37,11 +39,11 @@ Features a playable Blackjack game for players/users to play against an opponent
 
 ### [About - about.html]
 INSERT LINK HERE
-A short paragraph about us and what the website is for
+A short paragraph describing the purpose of this website.
 
 ### [Contact - contact.html]
 INSERT LINK HERE
-For futher enquiries users can use the contact form to contact us.
+For futher enquiries users can use the contact form to contact us or leave a feedback. Feedbacks by sender are shown under the form.
 
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
  
