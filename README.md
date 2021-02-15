@@ -15,11 +15,9 @@ https://xd.adobe.com/view/01023a2c-5511-4685-937a-656d35b09470-5451/
 
 ## Features
 ### [Homepage - index.html](https://s10208233.github.io/ID_Assg3_website/index.html)
-https://s10208233.github.io/ID_Assg3_website/index.html
 The homepage displays an banner of 'AITA' followed by a simple infographic style explaination of how API requests works layed out from top to bottom.
 
-### [Play - play.html]
-INSERT LINK HERE
+### [Play - Games.html](https://s10208233.github.io/ID_Assg3_website/play.html)
 The Play page in AITA allows users to test or play with working public APIs made into mini-games. Various minigames are stated below.
 
 #### Blackjack
@@ -37,11 +35,11 @@ Retrieves daily posts from the official NASA website and has pictures from vario
 
 #### Baguette Anime
 
-### [About - about.html]
+### [About - about.html](https://s10208233.github.io/ID_Assg3_website/about.html)
 INSERT LINK HERE
 A short paragraph describing the purpose of this website.
 
-### [Contact - contact.html]
+### [Contact - contact.html](https://s10208233.github.io/ID_Assg3_website/contact.html)
 INSERT LINK HERE
 For futher enquiries users can use the contact form to contact us or leave a feedback. Feedbacks by sender are shown under the form.
 
