@@ -21,6 +21,20 @@ The homepage displays an banner of 'AITA' followed by a simple infographic style
 ### [Play - play.html]
 INSERT LINK HERE
 The Play page in AITA allows users to test with working public APIs
+
+#### Blackjack
+Features a playable Blackjack game for players/users to play against an opponent which makes random moves based 
+
+#### NASA
+
+#### Trivia
+
+#### Dogs
+
+#### Advice + Affirmation
+
+#### Baguette Anime
+
 ### [About - about.html]
 INSERT LINK HERE
 A short paragraph about us and what the website is for

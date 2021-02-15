@@ -95,41 +95,73 @@
         </p>
     </div>
 
-    <!-- SIGN IN / SIGN OUT MODAL -->
-    <div class="modal fade" id="sign-in-out" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="ModalLabel">Sign In</h5>
-                <a href="" data-bs-dismiss="modal" aria-label="Close">
-                        <lottie-player src="https://assets3.lottiefiles.com/private_files/lf30_ox0nrliv.json"  background="transparent"  speed="0.5"  style="width: 25px; height: 25px;"  loop autoplay></lottie-player>
-                </a>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div id="sign-in-content">
-                <div id="signInError"></div>
-                <form>
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="sign-in-email" placeholder="example@email.com">
-                      <div id="emailHelp" class="form-text" style="color: rgba(255, 255, 255, 0.50);">We'll never share your email with anyone else.</div>
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="sign-in-password">
-                    </div>
-                    <button type="submit" class="btn btn-primary" onclick="signIn()">Sign In</button>
-                  </form>
+<!-- SIGN IN / SIGN OUT MODAL -->
+<div class="modal fade" id="sign-in-out" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="ModalLabel">Sign In</h5>
+          <a href="" data-bs-dismiss="modal" aria-label="Close">
+                  <lottie-player src="https://assets3.lottiefiles.com/private_files/lf30_ox0nrliv.json"  background="transparent"  speed="0.5"  style="width: 25px; height: 25px;"  loop autoplay></lottie-player>
+          </a>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="sign-in-content">
+            <div id="signInError"></div>
+          <h3>Existing Users</h3>
+          <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="sign-in-email" placeholder="example@email.com">
+                <div id="emailHelp" class="form-text" style="color: rgba(255, 255, 255, 0.50);">We'll never share your email with anyone else.</div>
               </div>
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            </div>
-          </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="sign-in-password">
+              </div>
+              <button id="confirm-sign-in-btn" type="submit" class="btn btn-primary" onclick="signIn()">Sign In</button>
+              <button type="submit" class="btn btn-secondary" onclick="createUser()">Create New Account</button>
+            </form>
+        </div>
+        <!-- CREATE ACCOUNT DIV -->
+        <div id="create-user-content">
+          <div id="createError"></div>
+          <h3>New Users</h3>
+          <form>
+              <div class="mb-3">
+                  <label>First Name</label>
+                  <input type="text" class="form-control" id="create-firstname" placeholder="John">
+              </div>
+              <div class="mb-3">
+                  <label>Last Name</label>
+                  <input type="text" class="form-control" id="create-lastname" placeholder="Doe">
+              </div>
+              <div class="mb-3">
+                  <label class="form-label">Age</label>
+                  <input class="form-control" type="text" id="age-display" onchange="updateAgeSlider(this.value);" value="">
+                  <input type="range" class="form-range" id="age-slider"  onchange="updateAgeDisplay(this.value);" min="1" max="100">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="create-email" placeholder="example@email.com">
+                <div id="emailHelp" class="form-text" style="color: rgba(255, 255, 255, 0.50);">We'll never share your email with anyone else.</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="create-password">
+              </div>
+              <button type="submit" class="btn btn-primary" onclick="submitCreateUser()">Create</button>
+              <button type="submit" class="btn btn-danger" onclick="cancelCreateUser()">Cancel</button>
+            </form>
         </div>
       </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
       <footer>
         <div class="footer-links">
             <a class="nav-link" href="index.html">Home</a>

@@ -227,9 +227,9 @@ function submitCreateUser(){
 
     $.ajax(settings).done(function (response) {
     console.log(response);
+    cancelCreateUser();
     });
 
-    cancelCreateUser();
 }
 
 function cancelCreateUser(){
