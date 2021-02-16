@@ -42,7 +42,7 @@ This API retreives anime girls baguette, and only will be revealed if singed in 
 A short paragraph describing the purpose of this website.
 
 ### [Contact - contact.html](https://s10208233.github.io/ID_Assg3_website/contact.html)
-For futher enquiries users can use the contact form to contact us or leave a feedback. Feedbacks by sender are shown under the form.
+For futher enquiries users can use the contact form to contact us or leave a feedback. Number of feedbacks are shown under the form.
  
 ### Existing Features
 - Sign In/Sign Out: Reveals and hides a certain API based if user is signed in or not.

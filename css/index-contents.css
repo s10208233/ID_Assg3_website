@@ -118,3 +118,40 @@
     font-size: 16px;
 }
 
+/* Mobile */
+@media only screen and (max-width:1250px){
+    iframe {
+        width: 98%;
+    }
+    #what-is-api{
+        margin: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+    #what-is-api div{
+        width: 100%;
+    }
+    #what-is-api lottie-player{
+        width: 100%;
+        height: 80%;
+    }
+    .haw-icons-container{
+        margin: 0;
+        width: 40%;
+    }
+    #how-api-work{
+        text-align: left;
+    }
+    #how-api-work lottie-player{
+        width: 90%;
+        height: 90%;
+    }
+    .haw-desc-container{
+        width: 60%;
+        font-size: small;
+    }
+    #back-to-top-btn{}
+
+}
+

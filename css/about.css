@@ -8,8 +8,8 @@
     padding: 25px;
     background-color:#00aeff36;
     margin: auto;
-    height:600px;
-    width:600px;
+    height:75%;
+    width:45%;
     text-align: center;
     color: white;
     position: absolute;
@@ -22,4 +22,11 @@
     margin:auto;
     width: 68px;
     height: 68px;
+}
+/* Mobile */
+@media only screen and (max-width:1250px){
+    #about-us{
+        width: 90%;
+        height: 90%;
+    }
 }

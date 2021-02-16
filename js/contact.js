@@ -26,6 +26,7 @@ $("#contactSubmit").click(function(){
     $.ajax(settings).done(function (response) {
     console.log(response);
     document.getElementById("form").reset();
+    alert("Your feedback has been submitted! Thank you.")
     });
 
     $.ajax(settings).fail(function(){

@@ -92,3 +92,14 @@ footer{
   #back-to-top-btn:active {
     background-color: #555;
   } */
+
+  /* Mobile */
+@media only screen and (max-width:1250px){
+  .footer-links{
+    padding: 0;
+    font-size: small;
+  }
+  #back-to-top-btn{
+    bottom: 45px;
+  }
+}
