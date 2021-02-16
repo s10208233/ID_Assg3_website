@@ -20,47 +20,50 @@ The homepage displays an banner of 'AITA' followed by a simple infographic style
 ### [Play - Games.html](https://s10208233.github.io/ID_Assg3_website/play.html)
 The Play page in AITA allows users to test or play with working public APIs made into mini-games. Various minigames are stated below.
 
-#### Blackjack
+#### Blackjack API
 Features a playable Blackjack game for players/users to play against an opponent which makes moves based on the random function in javascript.
 
-#### NASA
+#### NASA API
 Retrieves daily posts from the official NASA website and has pictures from various rovers on the planet Mars.
 
-#### Trivia
+#### Trivia API
+A game quiz on general knowledge, mostly based in American context.
 
+#### Dogs API
+Fetches images of dogs.
 
-#### Dogs
+#### Advice + Affirmation API
+Using two different APIs with similar results, these two retrieves supportive phrases.
 
-#### Advice + Affirmation
-
-#### Baguette Anime
+#### Baguette Anime API
+This API retreives anime girls baguette, and only will be revealed if singed in at appropriate age
 
 ### [About - about.html](https://s10208233.github.io/ID_Assg3_website/about.html)
-INSERT LINK HERE
 A short paragraph describing the purpose of this website.
 
 ### [Contact - contact.html](https://s10208233.github.io/ID_Assg3_website/contact.html)
-INSERT LINK HERE
 For futher enquiries users can use the contact form to contact us or leave a feedback. Feedbacks by sender are shown under the form.
-
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
  
 ### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
+- Sign In/Sign Out: Reveals and hides a certain API based if user is signed in or not.
+   
+- Dynamic Update Contact Form: Contact page shows number of sent forms and sender, feedback details of form are still hidden.
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+- Back to Top button: Easy for access to navigation bar. (Decided to kept non-sticky to give full view of page content when browsing.)
 
 ### Features Left to Implement
-- Another feature idea
+- Merchandise page
 
 ## Technologies Used
-
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
 
+- [restDB](https://restdb.io/)
+    - Used for creation of custom APIs to store and collect data such as user sign in information and contact forms.
+
+- [LottieFiles](https://lottiefiles.com/)
+    - Animations from lottiefiles are used to give a better user experience on the website as well as a visual form of            explanation for the educational contents on the homepage.
 
 ## Testing
 
