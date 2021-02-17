@@ -75,7 +75,26 @@ For futher enquiries users can use the contact form to contact us or leave a fee
    2. Submitting an incorrect password when signing in will play an error animation and display in text to user.
    3. Submitting a correct log in 
 
+3. Submitting feedback/contact form
+    1. Submitting empty forms will alert the user and clear the form without submitting any feedback to the database
+    2. Submitting with an email in the wrong format will alert the user and clear the forms without submitting any feedback to the database
+    3. Submitting with no issues will submit the feedback to the database and update the list of respondants accordingly while showing the respondants username and email only.
 
+4. API Games
+    # Blackjack:
+     1. Continously spamming the buttons will not cause errors because its either hidden immediately or the button is a draw button where it will continously draw cards accordingly.
+     2. If the deck were to run out of cards the user will be alerted and the api game will resest itself
+    # Nasa:
+
+    # Trivia
+
+    # Dog Genarator
+     1. Opening then closing then opening the model again will cause an error to occur
+     2. Pressing the previous button till there is no previous image will alert the user and reset and api
+
+    # Advice & Affirmation
+     1. The api takes awhile to fetch hence there is a loading animation.
+     
 For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
 
 1. Contact form:
