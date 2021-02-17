@@ -12,8 +12,8 @@ let imgSrc3 = "";
 let imgSrc4 = "";
 
 let outcome ="";
-var playerBool = "false";
-var botBool = "false";
+var playerBool = 0;
+var botBool = 0;
 
 //starting the blackjack game
 $("#deckbtn").click(async function main(){
@@ -170,7 +170,7 @@ $("#draw").click(async function draw(){
     })
     .then(data=>{
         //this is to check whether the drawn card is a ACE
-        if (playerBool === "false"){
+        if (Boolean(playerBool) == false){
             if (data.cards[0].value == "ACE"){
                 value = value + 1;
             }
@@ -181,19 +181,17 @@ $("#draw").click(async function draw(){
                 value = value + parseInt(data.cards[0].value)
             }
         }
-        else if (playerBool === "true"){
+        else {
             if (Number.isInteger(parseInt(data.cards[0].value)) == false){
                 value = value;
-                playerBool = "false";
+                playerBool = 0;
             }
             else{
                 value = value + parseInt(data.cards[0].value) - 10;
-                playerBool = "false";
+                playerBool = 0;
             }
         }
-        else{
-            value = value + parseInt(data.cards[0].value) 
-        }
+        
         
         
         console.log("final: " + value)
@@ -224,9 +222,9 @@ function botDrawing(){
             })
             .then(data=>{
 
-                if (botBool === "false"){
+                if (Boolean(botBool) == false){
                     if (data.cards[0].value == "ACE"){
-                        botValue = BotValue + 1;
+                        botValue = botValue + 1;
                     }
                     else if (Number.isInteger(parseInt(data.cards[0].value)) == false){
                         botValue = botValue + 10;
@@ -235,19 +233,17 @@ function botDrawing(){
                         botValue = botValue + parseInt(data.cards[0].value)
                     }
                 }
-                else if (botBool === "true"){
+                else{
                     if (Number.isInteger(parseInt(data.cards[0].value)) == false){
                         botValue = botValue;
-                        botBool = "false";
+                        botBool = 0;
                     }
                     else{
                         botValue = botValue + parseInt(data.cards[0].value) - 10;
-                        botBool = "false";
+                        botBool = 0;
                     }   
                 }
-                else{
-                    botValue = botValue + parseInt(data.cards[0].value) 
-                }
+                
             
             
                 $("#botHand").append("<img src='"+data.cards[0].image+"'>");
@@ -269,9 +265,9 @@ function botDrawing(){
         })
         .then(data=>{
 
-        if (botBool === "false"){
+        if (Boolean(botBool) == false){
             if (data.cards[0].value == "ACE"){
-                botValue = BotValue + 1;
+                botValue = botValue + 1;
             }
             else if (Number.isInteger(parseInt(data.cards[0].value)) == false){
                 botValue = botValue + 10;
@@ -280,18 +276,15 @@ function botDrawing(){
                 botValue = botValue + parseInt(data.cards[0].value)
             };
         }
-        else if (botBool === "true"){
+        else{
             if (Number.isInteger(parseInt(data.cards[0].value)) == false){
                 botValue = botValue;
-                botBool = false;
+                botBool = 0;
             }
             else{
                 botValue = botValue + parseInt(data.cards[0].value) - 10;
-                botBool = false;
+                botBool = 0;
             }   
-        }
-        else{
-            botValue = botValue + parseInt(data.cards[0].value) 
         }
         
         
@@ -305,15 +298,14 @@ function botDrawing(){
 
 //function to skip or pass which ends the round
 $("#skip").click(function skip(){
-    
+    $("#skip").hide();
+    $("#draw").hide();
     botDrawing();
     
     
-    //yimeout needed so the values are calculated correctly
+    //timeout needed so the values are calculated correctly
     setTimeout(function(){
         $("#botHand").show();
-        $("#draw").hide();
-        $("#skip").hide();
         //this is to check and show whether the player has won or lost
         if (value >= 16 && value <= 21 && value > botValue){
             // console.log("skip: "+value);
@@ -321,8 +313,6 @@ $("#skip").click(function skip(){
             console.log("w/l: "+1);
             alert("You won the round!");
             outcome = "win"
- 
-
             imgSrc3 = "";
             imgSrc4 = "";
             
@@ -331,16 +321,12 @@ $("#skip").click(function skip(){
         else if ((value < 16 || value > 21) && (botValue < 16 || botValue > 21)){
             alert("Its a tie!");
             outcome = "tie"
-
-
             imgSrc3 = "";
             imgSrc4 = "";
         }
         else if(botValue < 16 || botValue > 21){
             alert("You won the round!");
             outcome = "win"
-
-
             imgSrc3 = "";
             imgSrc4 = "";
         }
@@ -348,8 +334,6 @@ $("#skip").click(function skip(){
             alert("You lost the round!");
             outcome = "lost"
             console.log("w/l: "+2);
-
-
             imgSrc3 = "";
             imgSrc4 = "";
             
@@ -358,8 +342,6 @@ $("#skip").click(function skip(){
         else if(value === botValue){
             alert("Its a tie!");
             outcome = "tie"
-
-
             imgSrc3 = "";
             imgSrc4 = "";
         }
@@ -367,7 +349,6 @@ $("#skip").click(function skip(){
             alert("You lost the round!");
             outcome = "lost"
             console.log("w/l: "+3);
-
             imgSrc3 = "";
             imgSrc4 = "";
             

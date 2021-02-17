@@ -1,12 +1,14 @@
 //click button to fetch img
-$("#idoggo").click(async function dog(){
+$("#idoggo").click(function dog(){
+    $("#api-content").empty();
+    $("#api-content").append('<div id="doggoDiv"></div>');
     $("#start").hide();
     $("#idoggo").hide();
     $("#next").show();
     $("#prev").show();
     dogArray = [];
     count = 0;
-    await fetch("https://dog.ceo/api/breeds/image/random")
+    fetch("https://dog.ceo/api/breeds/image/random")
     .then(response=>{
         if (response.ok) {
         return response.json();
@@ -28,7 +30,8 @@ $("#idoggo").click(async function dog(){
     $("#next").click(async function(){
 
         if (count+1 == dogArray.length){
-            $("#doggoDiv").empty();
+            $("#api-content").empty();
+            $("#api-content").append('<div id="doggoDiv"></div>');
             count++;
             await fetch("https://dog.ceo/api/breeds/image/random")
             .then(response=>{

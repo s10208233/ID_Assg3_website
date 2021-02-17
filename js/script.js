@@ -56,9 +56,9 @@ function openAPI(buttonId){
 
     if (buttonId == "api-dog"){
         $("#ModalLabel").html("Dog API") 
-        $('#api-content').empty();
+        $("#api-content").empty();
+        
         $("#idoggo").show();
-        $("#api-content").append('<div id="doggoDiv"></div>');
         $("#next").hide();
         $("#prev").hide();
         $("#api-control-dog").show();
