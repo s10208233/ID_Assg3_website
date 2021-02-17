@@ -84,29 +84,44 @@ For futher enquiries users can use the contact form to contact us or leave a fee
 1. Sign In
    1. Opening the sign in modal may cause the page to refresh.
 
-
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
-
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
-
 ## Credits
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- Homepage "infographic" contents [What is an API?(Application Programming Interface)](https://www.mulesoft.com/resources/api/what-is-an-api)
+- Deck of cards [BlackJack API](https://deckofcardsapi.com/)
+- Trivia [Trivia API](http://jservice.io/)
+- Advice [Advice API](https://api.adviceslip.com/)
+- Affirmations [Affirmation API](https://www.affirmations.dev/)
+- Dog [Dog API](https://dog.ceo/dog-api/)
+- NASA [NASA API](https://api.nasa.gov/Ej1PTXMfCnc8NPfky2OYSqjzkwnZNDdJRjeAOtQ0)
 
 ### Media
-- The photos used in this site were obtained from ...
 
+#### Images
+api_infographic 
+https://www.smartfile.com/blog/the-api-infographic/
+
+All-About-APIs-Infographic
+https://www.safe.com/blog/2016/04/all-about-apis/
+
+thonk.svg
+https://www.reddit.com/r/Thinking/comments/8eg2u4/vectorized_thonk/
+
+#### LottieFiles
+server
+https://lottiefiles.com/41703-cloud-server
+
+gear lottie
+https://lottiefiles.com/web-player?lottie_url=https%3A%2F%2Fassets2.lottiefiles.com%2Fpackages%2Flf20_TRw9HT.json
+
+laptop
+https://lottiefiles.com/web-player?lottie_url=https%3A%2F%2Fassets9.lottiefiles.com%2Fpackages%2Flf20_g1YJeb.json
+
+nasa-logo
+https://api.nasa.gov/
+
+question-mark
+https://lottiefiles.com/web-player?lottie_url=https%3A%2F%2Fassets6.lottiefiles.com%2Fpackages%2Flf20_tHEtXH.json
 ### Acknowledgements
 
 - I received inspiration for this project from X
