@@ -73,7 +73,16 @@ For futher enquiries users can use the contact form to contact us or leave a fee
 2. Sign In/Sign Out & Create Account
    1. Submitting an email that does not exist to sign in will play an error animation and display in text to user.
    2. Submitting an incorrect password when signing in will play an error animation and display in text to user.
-   3. Submitting a correct log in 
+   3. A correct log in will display a green tick to let users know.
+   4. Once sign in modal is opened, users are then able to create an account from there. When creating an account, if the form fields are empty, error message with animation will play for 3 seconds.
+   5. Green tick and messsage will play for 3 seconds instead if the form is filled.
+
+
+
+### Bugs during testing
+
+1. Sign In
+   1. Opening the sign in modal may cause the page to refresh.
 
 
 For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
