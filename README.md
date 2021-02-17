@@ -98,30 +98,30 @@ For futher enquiries users can use the contact form to contact us or leave a fee
 ### Media
 
 #### Images
-api_infographic 
+api_infographic <br>
 https://www.smartfile.com/blog/the-api-infographic/
 
-All-About-APIs-Infographic
+All-About-APIs-Infographic<br>
 https://www.safe.com/blog/2016/04/all-about-apis/
 
-thonk.svg
+thonk.svg<br>
 https://www.reddit.com/r/Thinking/comments/8eg2u4/vectorized_thonk/
 
 #### LottieFiles
-server
+server<br>
 https://lottiefiles.com/41703-cloud-server
 
-gear lottie
+gear lottie<br>
 https://lottiefiles.com/web-player?lottie_url=https%3A%2F%2Fassets2.lottiefiles.com%2Fpackages%2Flf20_TRw9HT.json
 
-laptop
+laptop<br>
 https://lottiefiles.com/web-player?lottie_url=https%3A%2F%2Fassets9.lottiefiles.com%2Fpackages%2Flf20_g1YJeb.json
 
-nasa-logo
+nasa-logo<br>
 https://api.nasa.gov/
 
 question-mark
 https://lottiefiles.com/web-player?lottie_url=https%3A%2F%2Fassets6.lottiefiles.com%2Fpackages%2Flf20_tHEtXH.json
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- We received inspiration for this project from our class lectures
