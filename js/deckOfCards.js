@@ -27,8 +27,8 @@ $("#deckbtn").click(async function main(){
     $("#skip").show();
     $("#draw").show();
     $("#botHand").hide();
-    $("#playerHand").append('<h1>Your hand</h1>');
-    $("#botHand").append("<h1>Opponent's hand</h1>");  
+    $("#playerHand").append('<h3>Your hand</h3>');
+    $("#botHand").append("<h3>Opponent's hand</h3>");  
     
     //api fetch
     await fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/draw/?count=4")

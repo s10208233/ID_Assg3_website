@@ -72,7 +72,7 @@ function openAPI(buttonId){
         $("#api-content").append('<lottie-player src="https://assets5.lottiefiles.com/temp/lf20_9gY9Yf.json" background="transparent"  speed="1"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>')
     }
     if (buttonId == "api-baguette"){
-        $("#ModalLabel").html("Totally Not Hentai");
+        $("#ModalLabel").html("Cute Anime Girls with Baguette");
         $("#api-content").empty();
         $("#api-control-baguette").show();
         $("#api-content").append('<lottie-player src="https://assets2.lottiefiles.com/packages/lf20_klQ5nz.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>')
@@ -129,36 +129,49 @@ function signIn(){
             $("#sign-in").hide();
             $("#sign-out").show();
             $("#confirm-sign-in-btn").hide()
+            $("#sign-in-content form").hide();
+            $("#sign-in-content h3").hide();
             sessionStorage.setItem("age",userData[i].age)
             if(userData[i].age >= 18){$("#baguette-card").show();}else{$("#baguette-card").hide();}
             $("#signInError").append("<lottie-player src='https://assets8.lottiefiles.com/private_files/lf30_x0qiw13f.json'  background='transparent'  speed='1.5'  style='width: 150px; height: 150px; margin: auto;'   autoplay></lottie-player>");
+            $("#signInError").append("<p style='text-align:center;'>Sign in sucessful.</p>")
             setTimeout(function(){
                 $("#sign-in-out").click();
                 $("#signInError").empty();
                 $("#confirm-sign-in-btn").show()
-            },2500);
+                $("#sign-in-content form").show();
+                $("#sign-in-content h3").show();
+            },3000);
             return;
             }
         }
         if (emailFound == false){
-            $("#signInError").append("<lottie-player src='https://assets8.lottiefiles.com/packages/lf20_slGFhN.json'  background='transparent'  speed='1'  style='width: 100px; height: 100px; margin: auto;'   autoplay></lottie-player>");
-            $("#signInError").append("<p style='text-align:center;'>Invalid account, user does not exist.</p>")
+            $("#signInError").append("<lottie-player src='https://assets8.lottiefiles.com/packages/lf20_slGFhN.json'  background='transparent'  speed='1.75'  style='width: 100px; height: 100px; margin: auto;'   autoplay></lottie-player>");
+            $("#signInError").append("<p style='text-align:center;'>Invalid account, email does not exist.</p>")
             $("#confirm-sign-in-btn").hide()
             // alert("Invalid account, user does not exist.")
+            $("#sign-in-content form").hide();
+            $("#sign-in-content h3").hide();
             setTimeout(function(){
                 $("#signInError").empty();
                 $("#confirm-sign-in-btn").show()
-            },2500)
+                $("#sign-in-content form").show();
+                $("#sign-in-content h3").show();
+            },3000)
             return;
         }
         else {
-            $("#signInError").append("<lottie-player src='https://assets8.lottiefiles.com/packages/lf20_slGFhN.json'  background='transparent'  speed='1'  style='width: 100px; height: 100px; margin: auto;'   autoplay></lottie-player>");
+            $("#signInError").append("<lottie-player src='https://assets8.lottiefiles.com/packages/lf20_slGFhN.json'  background='transparent'  speed='1.75'  style='width: 100px; height: 100px; margin: auto;'   autoplay></lottie-player>");
             $("#signInError").append("<p style='text-align:center;'>Incorrect password, try again.</p>")
             $("#confirm-sign-in-btn").hide()
+            $("#sign-in-content form").hide();
+            $("#sign-in-content h3").hide();
             setTimeout(function(){
+                $("#sign-in-content form").show();
+                $("#sign-in-content h3").show();
                 $("#signInError").empty();
                 $("#confirm-sign-in-btn").show()
-            },2500)
+            },3000)
             // alert("Incorrect password, try again.")
             return;
         }
@@ -197,13 +210,21 @@ function submitCreateUser(){
         document.getElementById("create-email").value == "" ||
         document.getElementById("create-password").value == ""
     ){
-        $("#createError").append("<lottie-player src='https://assets8.lottiefiles.com/packages/lf20_slGFhN.json'  background='transparent'  speed='1'  style='width: 100px; height: 100px; margin: auto;'   autoplay></lottie-player>");
+        $("#createError").append("<lottie-player src='https://assets8.lottiefiles.com/packages/lf20_slGFhN.json'  background='transparent'  speed='1.75'  style='width: 100px; height: 100px; margin: auto;'   autoplay></lottie-player>");
         $("#createError").append("<p style='text-align:center;'>Please make sure all input fields are filled.</p>")
+        $("#create-user-content form").hide();
+        $("#create-user-content h3").hide();
         setTimeout(function(){
             $("#createError").empty();
-        },2500)
+            $("#create-user-content form").show();
+            $("#create-user-content h3").show();
+
+        },3000)
         return;
     }
+    $("#create-user-content form").hide();
+    $("#create-user-content h3").hide();
+    $("#createError").append('<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_Q2FX6B.json"  background="transparent"  speed="1"  style="margin:auto;width: 300px; height: 300px;"  loop  autoplay></lottie-player>');
     let jsondata = {
         "first_name": document.getElementById("create-firstname").value,
         "last_name": document.getElementById("create-lastname").value,
@@ -227,7 +248,16 @@ function submitCreateUser(){
 
     $.ajax(settings).done(function (response) {
     console.log(response);
-    cancelCreateUser();
+    $("#createError").empty();
+    $("#createError").append("<lottie-player src='https://assets8.lottiefiles.com/private_files/lf30_x0qiw13f.json'  background='transparent'  speed='1.75'  style='width: 100px; height: 100px; margin: auto;'   autoplay></lottie-player>");
+    $("#createError").append("<p style='text-align:center;'>Account Sucessfully Created.</p>")
+    $("#create-user-content form").hide();
+    $("#create-user-content h3").hide();
+    setTimeout(function(){
+        $("#create-user-content form").show();
+        $("#create-user-content h3").show();
+        cancelCreateUser();
+    },3000)
     });
 
 }
@@ -235,6 +265,11 @@ function submitCreateUser(){
 function cancelCreateUser(){
     $("#sign-in-content").show();
     $("#create-user-content").hide();
+    document.getElementById("create-firstname").value = "";
+    document.getElementById("create-lastname").value = "";
+    document.getElementById("age-display").value = "";
+    document.getElementById("create-email").value = "";
+    document.getElementById("create-password").value = "";
 }
 
 // Back To Top Btn
