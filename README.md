@@ -67,6 +67,15 @@ For futher enquiries users can use the contact form to contact us or leave a fee
 
 ## Testing
 
+1. Back to Top:
+   1. Once user starts to sroll below a page, home button will be revealed. Hidden at the top of pages.
+
+2. Sign In/Sign Out & Create Account
+   1. Submitting an email that does not exist to sign in will play an error animation and display in text to user.
+   2. Submitting an incorrect password when signing in will play an error animation and display in text to user.
+   3. Submitting a correct log in 
+
+
 For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
 
 1. Contact form:
