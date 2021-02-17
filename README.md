@@ -83,18 +83,18 @@ For futher enquiries users can use the contact form to contact us or leave a fee
     3. Submitting with no issues will submit the feedback to the database and update the list of respondants accordingly while showing the respondants username and email only.
 
 4. API Games
-    # Blackjack:
+    #### Blackjack:
      1. Continously spamming the buttons will not cause errors because its either hidden immediately or the button is a draw button where it will continously draw cards accordingly.
      2. If the deck were to run out of cards the user will be alerted and the api game will resest itself
-    # Nasa:
+    #### Nasa:
 
-    # Trivia
+    #### Trivia
 
-    # Dog Genarator
+    #### Dog Genarator
      1. Opening then closing then opening the model again will cause an error to occur
      2. Pressing the previous button till there is no previous image will alert the user and reset and api
 
-    # Advice & Affirmation
+    #### Advice & Affirmation
      1. The api takes awhile to fetch hence there is a loading animation.
      
 For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
@@ -117,6 +117,19 @@ For any scenarios that have not been automated, test the user stories manually a
 - NASA [NASA API](https://api.nasa.gov/Ej1PTXMfCnc8NPfky2OYSqjzkwnZNDdJRjeAOtQ0)
 
 ### Media
+#### Lottie animations
+ 1. Loading circle - https://lottiefiles.com/8771-loading
+ 2. Sad crying girl - https://lottiefiles.com/36228-sadness
+ 3. Happy toaster - https://lottiefiles.com/24462-happy-toast
+ 4. Cute dog - https://lottiefiles.com/2113-dog
+ 5. Trivia question mark - https://lottiefiles.com/4975-question-mark
+ 6. Nasa Logo - https://lottiefiles.com/23661-nasa-logo
+ 7. Ace of Spades - https://lottiefiles.com/47410-ace-of-spade
+ 8. Sign in error - https://lottiefiles.com/13865-sign-for-error-flat-style
+ 9. Error 404 - https://lottiefiles.com/10409-404
+ 10. Salad cat - https://lottiefiles.com/47267-salad-cat
+ 11. Sad emoji - https://lottiefiles.com/28432-emoji-sad
+ 12. Winner - https://lottiefiles.com/8123-winner
 
 #### Images
 api_infographic <br>
@@ -128,6 +141,24 @@ https://www.safe.com/blog/2016/04/all-about-apis/
 thonk.svg<br>
 https://www.reddit.com/r/Thinking/comments/8eg2u4/vectorized_thonk/
 
+Advice<br>
+https://www.clipartmax.com/download/m2i8K9d3G6H7i8A0_medical-advice-health-icon-png/
+
+Baguette<br>
+https://www.cleanpng.com/png-baguette-bockwurst-small-bread-frankfurter-wrstc-5753936/download-png.html
+
+Trivia<br>
+https://www.cleanpng.com/png-trivia-logo-game-sporcle-quiz-2480825/download-png.html
+
+Nasa<br>
+https://www.stickpng.com/img/icons-logos-emojis/tech-companies/nasa-logo
+
+Dog Paw<br>
+https://www.hiclipart.com/free-transparent-background-png-clipart-mckox/download
+
+Blackjack<br>
+https://www.pngkit.com/bigpic/u2q8o0y3i1i1u2w7/
+
 #### LottieFiles
 server<br>
 https://lottiefiles.com/41703-cloud-server
@@ -138,11 +169,42 @@ https://lottiefiles.com/web-player?lottie_url=https%3A%2F%2Fassets2.lottiefiles.
 laptop<br>
 https://lottiefiles.com/web-player?lottie_url=https%3A%2F%2Fassets9.lottiefiles.com%2Fpackages%2Flf20_g1YJeb.json
 
-nasa-logo<br>
-https://api.nasa.gov/
+Loading circle<br>
+https://lottiefiles.com/8771-loading
 
-question-mark
-https://lottiefiles.com/web-player?lottie_url=https%3A%2F%2Fassets6.lottiefiles.com%2Fpackages%2Flf20_tHEtXH.json
+Sad crying girl<br>
+https://lottiefiles.com/36228-sadness
+
+Happy toaster<br>
+https://lottiefiles.com/24462-happy-toast
+
+Cute dog<br>
+https://lottiefiles.com/2113-dog
+
+Trivia question mark<br>
+ https://lottiefiles.com/4975-question-mark
+
+Nasa Logo<br>
+https://lottiefiles.com/23661-nasa-logo
+
+Ace of Spades<br>
+https://lottiefiles.com/47410-ace-of-spade
+
+Sign in error<br>
+https://lottiefiles.com/13865-sign-for-error-flat-style
+
+Error 404<br>
+https://lottiefiles.com/10409-404
+
+Salad cat<br>
+https://lottiefiles.com/47267-salad-cat
+
+Sad emoji<br>
+https://lottiefiles.com/28432-emoji-sad
+
+Winner<br>
+https://lottiefiles.com/8123-winner
+
 ### Acknowledgements
 
 - We received inspiration for this project from our class lectures
