@@ -73,7 +73,9 @@ For futher enquiries users can use the contact form to contact us or leave a fee
 2. Sign In/Sign Out & Create Account
    1. Submitting an email that does not exist to sign in will play an error animation and display in text to user.
    2. Submitting an incorrect password when signing in will play an error animation and display in text to user.
-   3. Submitting a correct log in 
+   3. A correct log in will display a green tick to let users know.
+   4. Once sign in modal is opened, users are then able to create an account from there. When creating an account, if the form fields are empty, error message with animation will play for 3 seconds.
+   5. Green tick and messsage will play for 3 seconds instead if the form is filled.
 
 3. Submitting feedback/contact form
     1. Submitting empty forms will alert the user and clear the form without submitting any feedback to the database
@@ -97,26 +99,50 @@ For futher enquiries users can use the contact form to contact us or leave a fee
      
 For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+### Bugs during testing
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+1. Sign In
+   1. Opening the sign in modal may cause the page to refresh.
 
 ## Credits
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- Homepage "infographic" contents [What is an API?(Application Programming Interface)](https://www.mulesoft.com/resources/api/what-is-an-api)
+- Deck of cards [BlackJack API](https://deckofcardsapi.com/)
+- Trivia [Trivia API](http://jservice.io/)
+- Advice [Advice API](https://api.adviceslip.com/)
+- Affirmations [Affirmation API](https://www.affirmations.dev/)
+- Dog [Dog API](https://dog.ceo/dog-api/)
+- NASA [NASA API](https://api.nasa.gov/Ej1PTXMfCnc8NPfky2OYSqjzkwnZNDdJRjeAOtQ0)
 
 ### Media
-- The photos used in this site were obtained from ...
 
+#### Images
+api_infographic <br>
+https://www.smartfile.com/blog/the-api-infographic/
+
+All-About-APIs-Infographic<br>
+https://www.safe.com/blog/2016/04/all-about-apis/
+
+thonk.svg<br>
+https://www.reddit.com/r/Thinking/comments/8eg2u4/vectorized_thonk/
+
+#### LottieFiles
+server<br>
+https://lottiefiles.com/41703-cloud-server
+
+gear lottie<br>
+https://lottiefiles.com/web-player?lottie_url=https%3A%2F%2Fassets2.lottiefiles.com%2Fpackages%2Flf20_TRw9HT.json
+
+laptop<br>
+https://lottiefiles.com/web-player?lottie_url=https%3A%2F%2Fassets9.lottiefiles.com%2Fpackages%2Flf20_g1YJeb.json
+
+nasa-logo<br>
+https://api.nasa.gov/
+
+question-mark
+https://lottiefiles.com/web-player?lottie_url=https%3A%2F%2Fassets6.lottiefiles.com%2Fpackages%2Flf20_tHEtXH.json
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- We received inspiration for this project from our class lectures

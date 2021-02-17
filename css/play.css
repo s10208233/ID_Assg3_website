@@ -87,6 +87,15 @@
     margin: 5px;
 }
 
+#playerHand img{
+    margin: 5px;
+    width: 115px;
+}
+#botHand img{
+    margin: 5px;
+    width: 115px;
+}
+
 .trivia-quiz-control{
     display: flex;
     flex-direction: row;
@@ -124,20 +133,29 @@
     display: block;
     margin:auto;
     width: 70%;
+    background: rgb(70,47,149);
+    background: linear-gradient(45deg, rgba(190, 52, 214, 0.75) 15%, rgba(42, 40, 170, 0.75) 100%);
+    padding: 15px;
+    width: 100%;
+    box-shadow: 0 3px 20px 9px rgba(135, 0, 225, 0.19), 0 6px 6px rgba(135,0,225,0.23);
 }
 
 .anime-baguette-container div{
     display: block;
-    margin: 50px;
-    width: 75%;
+    margin: 50px 0px;
+    width: 90%;
     justify-content: center;
 }
 
 .anime-baguette-container img{
+    background: rgb(70,47,149);
+    background: linear-gradient(45deg, rgba(190, 52, 214, 0.75) 15%, rgba(42, 40, 170, 0.75) 100%);
+    padding: 15px;
     margin: auto;
     flex: auto;
     height: 100%;
     width: 100%;
+    box-shadow: 0 3px 20px 9px rgba(135, 0, 225, 0.19), 0 6px 6px rgba(135,0,225,0.23);
 }
 
 .anime-baguette-container{
