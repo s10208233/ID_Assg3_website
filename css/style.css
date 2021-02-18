@@ -102,7 +102,14 @@ footer{
   .footer-links{
     padding: 0;
     font-size: small;
+    flex-direction: column;
+    padding: 15px 0px 75px;
   }
+  .footer-links .nav-link{
+    font-size: 16px;
+    margin: 5px;
+  }
+
   #back-to-top-btn{
     bottom: 45px;
   }

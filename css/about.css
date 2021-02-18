@@ -27,6 +27,6 @@
 @media only screen and (max-width:1250px){
     #about-us{
         width: 90%;
-        height: 90%;
+        height: fit-content;
     }
 }
