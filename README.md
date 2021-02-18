@@ -51,8 +51,11 @@ For futher enquiries users can use the contact form to contact us or leave a fee
 
 - Back to Top button: Easy for access to navigation bar. (Decided to kept non-sticky to give full view of page content when browsing.)
 
+- Contact/feedback form using restDB
+<img src ="images/restdb.PNG" > 
 ### Features Left to Implement
 - Merchandise page
+- Achievements for completing thr apis
 
 ## Technologies Used
 
@@ -104,7 +107,8 @@ For any scenarios that have not been automated, test the user stories manually a
 
 1. Sign In
    1. Opening the sign in modal may cause the page to refresh.
-
+2. Dog api 
+   2. closing out the model then opening it again will cause the imagae to not fetch properly
 ## Credits
 
 ### Content
@@ -117,19 +121,6 @@ For any scenarios that have not been automated, test the user stories manually a
 - NASA [NASA API](https://api.nasa.gov/Ej1PTXMfCnc8NPfky2OYSqjzkwnZNDdJRjeAOtQ0)
 
 ### Media
-#### Lottie animations
- 1. Loading circle - https://lottiefiles.com/8771-loading
- 2. Sad crying girl - https://lottiefiles.com/36228-sadness
- 3. Happy toaster - https://lottiefiles.com/24462-happy-toast
- 4. Cute dog - https://lottiefiles.com/2113-dog
- 5. Trivia question mark - https://lottiefiles.com/4975-question-mark
- 6. Nasa Logo - https://lottiefiles.com/23661-nasa-logo
- 7. Ace of Spades - https://lottiefiles.com/47410-ace-of-spade
- 8. Sign in error - https://lottiefiles.com/13865-sign-for-error-flat-style
- 9. Error 404 - https://lottiefiles.com/10409-404
- 10. Salad cat - https://lottiefiles.com/47267-salad-cat
- 11. Sad emoji - https://lottiefiles.com/28432-emoji-sad
- 12. Winner - https://lottiefiles.com/8123-winner
 
 #### Images
 api_infographic <br>
