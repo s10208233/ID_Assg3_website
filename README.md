@@ -108,7 +108,7 @@ For any scenarios that have not been automated, test the user stories manually a
 1. Sign In
    1. Opening the sign in modal may cause the page to refresh.
 2. Dog api 
-   2. closing out the model then opening it again will cause the imagae to not fetch properly
+   1. closing out the model then opening it again will cause the imagae to not fetch properly
 ## Credits
 
 ### Content
