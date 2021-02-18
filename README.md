@@ -90,8 +90,11 @@ For futher enquiries users can use the contact form to contact us or leave a fee
      1. Continously spamming the buttons will not cause errors because its either hidden immediately or the button is a draw button where it will continously draw cards accordingly.
      2. If the deck were to run out of cards the user will be alerted and the api game will resest itself
     #### Nasa:
+    1. Clicking either of buttons will fetch NASA's data, in between will be a loading animation.
 
     #### Trivia
+    1. Trivia will either play wrong or correct information when submitted answer.
+    2. Trivia will play wrong animation and display answer when skipped.
 
     #### Dog Genarator
      1. Opening then closing then opening the model again will cause an error to occur
