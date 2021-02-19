@@ -1,6 +1,8 @@
 # AITA
 AITA stands for "An Introduction to APIs". This website aims to give a basic understand how an API work and letting users try out various APIs on the site as well.
- 
+# Github link
+## [Website - https://s10208233.github.io/ID_Assg3_website/index.html]
+## [Github repo - https://github.com/s10208233/ID_Assg3_website] 
 ## Design Process
 As an informative website giving informative about APIs on an introductory level, as such, animations will be an essential part of the design implementation for users understand the content visually. AITA also provides ready to use APIs for users to have a more experential learning.
 
