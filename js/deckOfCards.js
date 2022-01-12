@@ -31,7 +31,7 @@ $("#deckbtn").click(async function main(){
     $("#botHand").append("<h3>Opponent's hand</h3>");  
     
     //api fetch
-    await fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/draw/?count=4")
+    await fetch("https://deckofcardsapi.com/api/deck/ozsnh0pt9vgq/draw/?count=4")
     .then(response=>{
         if (response.ok) {
         return response.json();
