@@ -31,7 +31,7 @@ $("#deckbtn").click(async function main(){
     $("#botHand").append("<h3>Opponent's hand</h3>");  
     
     //api fetch
-    await fetch("https://deckofcardsapi.com/api/deck/"+ id + "/draw/?count=4")
+    await fetch("https://deckofcardsapi.com/api/deck/ozsnh0pt9vgq/draw/?count=4")
     .then(response=>{
         if (response.ok) {
             return response.json();
@@ -45,22 +45,9 @@ $("#deckbtn").click(async function main(){
         $("#draw").hide();
         $("#deckbtn").show();
         //error catching 
-            fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
 
-                }
-                else {
-                    //error catching 
-                }
-            })
-            .then(data => {
-                console.log(data)
-                alert("The deck is outdated please refresh the page!")
-                id = data.deck_id
            
-        }
+    }
     })
     .then(data=>{
         console.log(data)
