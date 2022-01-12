@@ -45,7 +45,7 @@ $("#deckbtn").click(async function main(){
         $("#draw").hide();
         $("#deckbtn").show();
         //error catching 
-            await fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
+            fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
             .then(response => {
                 if (response.ok) {
                     return response.json();
