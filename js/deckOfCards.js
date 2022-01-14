@@ -53,7 +53,7 @@ $("#deckbtn").click(async function main(){
         console.log(data)
         if (data.success == "false"){
             alert("The deck ran out of cards please draw again!")   
-            fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/shuffle/")
+            fetch("https://deckofcardsapi.com/api/deck/ozsnh0pt9vgq/shuffle/")
         }
         imgSrc1 = data.cards[0].image;
         imgSrc2 = data.cards[1].image;
@@ -162,7 +162,7 @@ $("#deckbtn").click(async function main(){
 
 //function to draw a card from the deck
 $("#draw").click(async function draw(){
-    await fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/draw/?count=1")
+    await fetch("https://deckofcardsapi.com/api/deck/ozsnh0pt9vgq/draw/?count=1")
     .then(response=>{
         if (response.ok) {
         return response.json();
@@ -214,7 +214,7 @@ function botDrawing(){
     //the bot will draw randomly
     if (botValue > 16 && botValue < 19){
         if (getRandomInt(0,1) == 1){
-            fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/draw/?count=1")
+            fetch("https://deckofcardsapi.com/api/deck/ozsnh0pt9vgq/draw/?count=1")
             .then(response=>{
                 if (response.ok) {
                 return response.json();
@@ -257,7 +257,7 @@ function botDrawing(){
     }
     //the bot will have to draw if the value is < 16
     else if (botValue < 16){
-        fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/draw/?count=1")
+        fetch("https://deckofcardsapi.com/api/deck/ozsnh0pt9vgq/draw/?count=1")
         .then(response=>{
             if (response.ok) {
             return response.json();
@@ -393,7 +393,7 @@ $("#skip").click(function skip(){
     
     
     
-    fetch("https://deckofcardsapi.com/api/deck/p5q1v30wa33c/shuffle/") 
+    fetch("https://deckofcardsapi.com/api/deck/ozsnh0pt9vgq/shuffle/")
 })
     
 
